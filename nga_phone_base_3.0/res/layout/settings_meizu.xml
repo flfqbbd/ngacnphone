@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <CheckBox
+            android:id="@+id/checkBox_down_img_no_wifi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/nowifi_downimg"/>
+
+        <CheckBox
+            android:id="@+id/checkBox_download_avatar_no_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/download_avatar_nowifi" />
+
+        <CheckBox
+            android:id="@+id/checkBox_night_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/nightmode" />
+
+        <CheckBox
+            android:id="@+id/checkBox_show_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/showAnimation" />
+
+		<CheckBox
+		    android:id="@+id/checkBox_use_view_cache"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="15dp"
+		    android:text="@string/use_view_cache" />
+        
+        <CheckBox
+            android:id="@+id/checkBox_show_signature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/showSignature" />
+        
+        <CheckBox
+            android:id="@+id/checkBox_upload_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/upload_location" />
+
+        <CheckBox
+            android:id="@+id/checkBox_split"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/split" />
+
+        <CheckBox
+            android:id="@+id/checkBox_ha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ha" />
+
+        <CheckBox
+            android:id="@+id/checkBox_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/notification_on" />
+
+        <CheckBox
+            android:id="@+id/checkBox_notification_sound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/notification_sound" />
+
+        <TextView
+            android:id="@+id/textView_font_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/text_size" />
+
+        <SeekBar
+            android:id="@+id/fontsize_seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp" />
+
+        <WebView
+            android:id="@+id/websize_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+
+        <SeekBar
+            android:id="@+id/webszie_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp" />
+        
+        <ImageView
+            android:id="@+id/avatarsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/avatar_description"
+            android:src="@drawable/default_avatar" />
+
+        <TextView
+            android:id="@+id/textView_avatarsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/avatar_size" />
+
+		<SeekBar
+            android:id="@+id/avatarsize_seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp" />
+		
+    </LinearLayout>
+    
+</ScrollView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="topic_row1">#fff8e5</color>
+	<color name="topic_row2">#fef3d1</color>
+	
+	<color name="article_row1">#fff8e5</color>
+	<color name="article_row2">#fef3d1</color>
+
+
+	<color name="font_default">#1d2a63</color>
+	<color name="font_floor">#3399ee</color>
+	<color name="font_post_time">#888888</color>
+	<color name="font_nick_name">#1d2a63</color>
+	<color name="font_post_num">#555555</color>
+
+	<color name="page">#ffeebb</color>
+	<color name="font_page_now">#314396</color>
+	<color name="white">#FFFFFF</color>
+</resources>
