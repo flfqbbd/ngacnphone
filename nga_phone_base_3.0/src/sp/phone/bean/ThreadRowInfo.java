@@ -38,14 +38,14 @@ public class ThreadRowInfo {
 	//private String lpic;
 	private String level;
 	//private int gp_lesser;
-	private int yz; //negative integer if user is nuked
+	private String yz; //negative integer if user is nuked
 	//private String js_escap_site;
 	//private String js_escap_honor;
 	private String js_escap_avatar;//avatar url
 	//private int regdate;
 	//private String mute_time;
-	private long  mute_time;
-	private int postnum;
+	private String  mute_time;
+	//private int postnum; //may be empty string
 	private int aurvrc;//prestige
 	//private int money;
 	//private int thisvisit;
@@ -134,30 +134,29 @@ public class ThreadRowInfo {
 	public void setLevel(String level) {
 		this.level = level;
 	}
-	public int getPostnum() {
-		return postnum;
-	}
-	public void setPostnum(int postnum) {
-		this.postnum = postnum;
-	}
+
 	public int getAurvrc() {
 		return aurvrc;
 	}
 	public void setAurvrc(int aurvrc) {
 		this.aurvrc = aurvrc;
 	}
-	public int getYz() {
+
+
+	public String getYz() {
 		return yz;
 	}
-	public void setYz(int yz) {
+	public void setYz(String yz) {
 		this.yz = yz;
 	}
-	public long getMute_time() {
+	public String getMute_time() {
 		return mute_time;
 	}
-	public void setMute_time(long mute_time) {
+	public void setMute_time(String mute_time) {
 		this.mute_time = mute_time;
 	}
+
+
 
 
 

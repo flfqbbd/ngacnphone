@@ -535,13 +535,13 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 	private void handleNickName(ThreadRowInfo row,int fgColor, TextView nickNameTV){
 		
 		String nickName = row.getAuthor();
-		int now = 0;
-		if(row.getYz() < 0)//nuked
+		//int now = 0;
+		if("-1".equals(row.getYz()))//nuked
 		{
 			fgColor = nickNameTV.getResources().getColor(R.color.title_red);
 			nickName += "(VIP)";
 		}
-		else if(row.getMute_time() > now)
+		else if( !StringUtil.isEmpty(row.getMute_time()) &&  ! "0".equals(row.getMute_time()))
 		{
 			fgColor = nickNameTV.getResources().getColor(R.color.title_orange);
 			nickName += "(´«Ëµ)";
