@@ -222,7 +222,7 @@ public class StringUtil {
 		//[img]./ddd.jpg[/img]
 	//	if(showImage){
 			s = s.replaceAll(ignoreCaseTag +"\\[img\\]\\s*\\.(/[^\\[|\\]]+)\\s*\\[/img\\]", 
-				"<a href='http://img.ngacn.cc/attachments$1'><img src='http://img.ngacn.cc/attachments$1' style= 'max-width:100%' ></a>");
+				"<a href='http://img6.ngacn.cc/attachments$1'><img src='http://img6.ngacn.cc/attachments$1' style= 'max-width:100%' ></a>");
 			s = s.replaceAll(ignoreCaseTag +"\\[img\\]\\s*(http[^\\[|\\]]+)\\s*\\[/img\\]", 
 				"<a href='$1'><img src='$1' style= 'max-width:100%' ></a>");
 			

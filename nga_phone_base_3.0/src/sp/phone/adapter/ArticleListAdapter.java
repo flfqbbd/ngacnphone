@@ -566,11 +566,11 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		while(it.hasNext()){
 			Entry<String, Attachment> entry = it.next(); 
 			//String url  = "http://img.ngacn.cc/attachments/" + entry.getValue().getAttachurl();
-			ret.append("<tr><td><a href='http://img.ngacn.cc/attachments/");
+			ret.append("<tr><td><a href='http://img6.ngacn.cc/attachments/");
 			ret.append(entry.getValue().getAttachurl());
 			ret.append("'>");
 			if (showImage) {
-				ret.append("<img src='http://img.ngacn.cc/attachments/");
+				ret.append("<img src='http://img6.ngacn.cc/attachments/");
 				ret.append(entry.getValue().getAttachurl());
 				if (entry.getValue().getThumb() == 1) {
 					ret.append(".thumb.jpg");

@@ -27,7 +27,7 @@ import com.alibaba.fastjson.JSON;
 
 public class MyApp extends Application implements PerferenceConstant {
 	final private static String TAG = MyApp.class.getSimpleName();
-	public final static int version = 451;
+	public final static int version = 452;
 	private PhoneConfiguration config = null;
 	boolean newVersion = false;
 	static final String RECENT = "×î½ü·ÃÎÊ";
@@ -49,7 +49,7 @@ public class MyApp extends Application implements PerferenceConstant {
 		super.onCreate();
 	}
 	
-public BoardHolder loadDefaultBoard(){
+	public BoardHolder loadDefaultBoard(){
 		
 		BoardHolder boards = new BoardHolder();
 		
@@ -280,6 +280,7 @@ public BoardHolder loadDefaultBoard(){
 		.putString(USER_LIST, userListString).commit();
 		
 	}
+	
 	private void loadConfig(){
 		
 		SharedPreferences share = this.getSharedPreferences(PERFERENCE,

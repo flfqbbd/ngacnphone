@@ -16,6 +16,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.PluginState;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.android.actionbarcompat.ActionBarActivity;
 
@@ -72,6 +73,15 @@ public class ImageViewerActivity extends  ActionBarActivity {
 			if(ActivityUtil.isGreaterThan_2_1())
 				settings.setLoadWithOverviewMode(true);
 			//settings.setUserAgentString(IPHONE_UA);
+			wv.setWebViewClient(new WebViewClient(){
+
+				@Override
+				public boolean shouldOverrideUrlLoading(WebView view, String url) {
+					// TODO Auto-generated method stub
+					return false;
+				}
+				
+			});
 			wv.loadUrl(uri);
 		}
 		

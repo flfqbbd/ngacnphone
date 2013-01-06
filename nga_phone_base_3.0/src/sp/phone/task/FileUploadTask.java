@@ -29,7 +29,7 @@ AsyncTask<String, Integer, String> {
 	private static final String TAG = FileUploadTask.class.getSimpleName();
 	private static final String BOUNDARY =
 					"-----------------------------7db1c5232222b";
-	private static final String ATTACHMENT_SERVER = "http://upload.ngacn.cc:8080/attach.php?";
+	private static final String ATTACHMENT_SERVER = "http://img6.ngacn.cc:8080/attach.php?";
 	private static final String LOG_TAG = FileUploadTask.class.getSimpleName();
 	
 	/*private InputStream is;*/
