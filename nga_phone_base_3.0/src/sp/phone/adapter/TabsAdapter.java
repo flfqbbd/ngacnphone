@@ -51,7 +51,7 @@ public class TabsAdapter extends ThreadFragmentAdapter implements
 
 	public TabsAdapter(FragmentActivity activity, TabHost tabHost,
 			ViewPager pager, Class<?> FragmentClass) {
-		super(activity,pager,FragmentClass);
+		super(activity,activity.getSupportFragmentManager(),pager,FragmentClass);
 		mContext = activity;
 		mTabHost = tabHost;
 		mViewPager = pager;

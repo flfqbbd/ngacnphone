@@ -100,7 +100,8 @@ PerferenceConstant{
 			tabhost.setup();
 			mTabsAdapter = new TabsAdapter(this, tabhost, mViewPager,ArticleListFragment.class);	
 		}else{
-			mTabsAdapter = new ThreadFragmentAdapter(this,  mViewPager,ArticleListFragment.class);
+			mTabsAdapter = new ThreadFragmentAdapter(this,getSupportFragmentManager(),
+							mViewPager,ArticleListFragment.class);
 		}
 		
 		mTabsAdapter.setArgument("id", tid);

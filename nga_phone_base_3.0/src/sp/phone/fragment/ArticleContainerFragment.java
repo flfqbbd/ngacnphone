@@ -82,9 +82,12 @@ PagerOwnner{
 		}
 
 		
-		
-		mTabsAdapter = new ThreadFragmentAdapter(getActivity(), mViewPager,ArticleListFragment.class);
+
+		mTabsAdapter = new ThreadFragmentAdapter(getActivity(),
+				getChildFragmentManager(),
+				mViewPager,ArticleListFragment.class);
 				//new TabsAdapter(getActivity(), tabhost, mViewPager,ArticleListFragment.class);
+		
 		mTabsAdapter.setArgument("id", tid);
 		mTabsAdapter.setArgument("pid", pid);
 		mTabsAdapter.setArgument("authorid", authorid);

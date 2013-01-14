@@ -1,8 +1,6 @@
 package sp.phone.fragment;
 
 import gov.pianzong.androidnga.R;
-import gov.pianzong.androidnga.activity.ArticleListActivity;
-import gov.pianzong.androidnga.activity.FlexibleTopicListActivity;
 import gov.pianzong.androidnga.activity.PostActivity;
 import sp.phone.adapter.ArticleListAdapter;
 import sp.phone.bean.PerferenceConstant;
@@ -454,6 +452,7 @@ public class ArticleListFragment extends Fragment
 			}
 
 		}
+		this.task = null;
 		
 	}
 	

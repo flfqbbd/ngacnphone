@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -18,9 +19,10 @@ implements OnPageChangeListener {
 	private final Class<?> clss;
 	
 	public ThreadFragmentAdapter(FragmentActivity activity,
+			FragmentManager fm,
 			ViewPager pager,
 			Class<?> FragmentClass) {
-		super(activity.getSupportFragmentManager());
+		super(fm);
 		mContext = activity;
 		this.clss = FragmentClass;
 		pager.setOnPageChangeListener(this);
