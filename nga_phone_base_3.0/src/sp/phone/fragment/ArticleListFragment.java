@@ -53,12 +53,12 @@ public class ArticleListFragment extends Fragment
 	static final int SEARCH_SUBJECT = 8;
 	private ListView listview=null;
 	private ArticleListAdapter articleAdpater;
-	private JsonThreadLoadTask task;
+	//private JsonThreadLoadTask task;
 	private int page=0;
 	private int tid;
 	private int pid;
 	private int authorid;
-	
+	private boolean needLoad = true;
 	private Object mActionModeCallback = null;
 	
 	@Override
@@ -164,7 +164,8 @@ public class ArticleListFragment extends Fragment
 				father = (PagerOwnner) getActivity();
 				if (father.getCurrentPage() == page) {
 					PhoneConfiguration.getInstance().setRefreshAfterPost(false);
-					this.task = null;
+					//this.task = null;
+					this.needLoad = true;
 				}
 			}catch(ClassCastException e){
 				Log.e(TAG,"father activity does not implements interface " 
@@ -185,10 +186,10 @@ public class ArticleListFragment extends Fragment
 	}
 	
 	private void loadPage(){
-		if(null == this.task){
+		if(needLoad){
 
 			Activity activity = getActivity();
-			task= new JsonThreadLoadTask(activity,this);
+			JsonThreadLoadTask task= new JsonThreadLoadTask(activity,this);
 			String url = HttpUtil.Server + 
 					"/read.php?"
 					+"&page="+page
@@ -452,7 +453,7 @@ public class ArticleListFragment extends Fragment
 			}
 
 		}
-		this.task = null;
+		this.needLoad = false;
 		
 	}
 	
