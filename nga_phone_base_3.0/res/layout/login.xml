@@ -5,20 +5,37 @@
     android:orientation="vertical" >
 
     <TextView android:layout_height="wrap_content"  android:layout_width="fill_parent"  android:layout_marginLeft="10dp" android:id="@+id/login_user_text" android:text="@string/username" android:layout_marginTop="5dp"></TextView>
-    <EditText android:layout_height="wrap_content" android:text="" android:layout_width="fill_parent" android:layout_marginLeft="10dp"   android:id="@+id/login_user_edittext" android:hint="@string/login_user_hint" android:layout_marginTop="5dp" android:background="@color/white" android:textColor="@color/black" android:cursorVisible="true" android:inputType="text|textNoSuggestions" android:textCursorDrawable="@null"></EditText>
-    <TextView android:layout_height="wrap_content"  android:id="@+id/login_password_text" android:layout_width="fill_parent" android:text="@string/password" android:layout_marginTop="5dp"></TextView>
+
+    <EditText
+        android:id="@+id/login_user_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:cursorVisible="true"
+        android:hint="@string/login_user_hint"
+        android:inputType="text|textNoSuggestions"
+        android:text=""
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null" >
+</EditText>
+    <TextView android:layout_height="wrap_content"  android:id="@+id/login_password_text" android:layout_width="fill_parent" android:layout_marginLeft="10dp" android:text="@string/password" android:layout_marginTop="5dp"></TextView>
 
     <EditText
         android:id="@+id/login_password_edittext"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:background="@color/white"
         android:cursorVisible="true"
         android:inputType="text|textPassword"
         android:textColor="@color/black"
         android:textCursorDrawable="@null" >
+
 </EditText>
 
     <Button
