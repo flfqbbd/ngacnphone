@@ -39,20 +39,12 @@ public class ForumTagDecodTask extends AsyncTask<WebView, Integer, String> {
 			return;
 		}
 		int tag = (Integer) webview.getTag();
-		final int lou = row.getLou();
+		//final int lou = row.getLou();
 		if(tag == row.getLou()){
 			final String htmldata = result;
 			webview.loadDataWithBaseURL(null,htmldata, "text/html", "utf-8",null);
-			Log.d("loadDataWithBaseURL", "load content for "+ lou);
-			/*webview.getRootView().postDelayed(new Runnable(){
-				@Override
-				public void run() {
-					webview.loadDataWithBaseURL(null,htmldata, "text/html", "utf-8",null);
-					Log.d("loadDataWithBaseURL", "load content for "+ lou);
-				}
-				
-			}
-					,100+(1+lou%20)*10);*/
+			//Log.d("loadDataWithBaseURL", "load content for "+ lou);
+			
 		}
 		super.onPostExecute(result);
 	}

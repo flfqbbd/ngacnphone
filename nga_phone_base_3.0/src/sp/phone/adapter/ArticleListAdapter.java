@@ -300,10 +300,8 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		setting.setJavaScriptEnabled(false);
 		//setting.setPluginState(WebSettings.PluginState.OFF);
 		contentTV.setWebViewClient(client);
-		//final String htmlData = ngaHtml;
-		final int lou = row.getLou();
-		//int delay = 100 + lou%20 * 20;
-		Log.d(TAG, "post content for "+ lou);
+
+
 		
 		contentTV.setTag(row.getLou());
 		contentTV.loadDataWithBaseURL(null,"loading", "text/html", "utf-8",null);
@@ -363,9 +361,9 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 			AvatarTag origTag = (AvatarTag)tagObj;
 			if(origTag.isDefault == false){
 				ImageUtil.recycleImageView(avatarIV);
-				Log.d(TAG, "recycle avatar:" + origTag.lou);
+				//Log.d(TAG, "recycle avatar:" + origTag.lou);
 			}else{
-				Log.d(TAG, "default avatar, skip recycle");
+				//Log.d(TAG, "default avatar, skip recycle");
 			}
 		}
 
@@ -437,13 +435,13 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 			cachedView = ref.get();
 		}
 		if (cachedView != null) {
-			Log.d(TAG, "get view from cache ,floor " + lou);
+			//Log.d(TAG, "get view from cache ,floor " + lou);
 			return cachedView;
 		} else {
-			if(ref != null)
-				Log.i(TAG, "cached view recycle by system:" + lou);
+			//if(ref != null)
+			//	Log.i(TAG, "cached view recycle by system:" + lou);
 			if (view == null || config.useViewCache) {
-				Log.d(TAG, "inflater new view ,floor " + lou);
+				//Log.d(TAG, "inflater new view ,floor " + lou);
 				view = LayoutInflater.from(activity).inflate(
 						R.layout.relative_aritclelist, parent,false);
 				holder = initHolder(view);
@@ -457,7 +455,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 				}
 				holder.contentTV.stopLoading();
 				if (holder.contentTV.getHeight() > 300) {
-					Log.d(TAG, "skip and store a tall view ,floor " + lou);
+					//Log.d(TAG, "skip and store a tall view ,floor " + lou);
 					// if (config.useViewCache)
 					viewCache.put(holder.position,new SoftReference<View>(view));
 					

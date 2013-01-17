@@ -46,8 +46,8 @@ public class AvatarLoadTask extends AsyncTask<String, Integer, Bitmap> {
 		try {
 			is = new FileInputStream(avatarLocalPath);
 		} catch (FileNotFoundException e) {
-			Log.d(TAG,
-					"avatar:" + avatarLocalPath + " is not cached" );
+			//Log.d(TAG,
+			//		"avatar:" + avatarLocalPath + " is not cached" );
 		}
 		
 
@@ -56,8 +56,8 @@ public class AvatarLoadTask extends AsyncTask<String, Integer, Bitmap> {
 			HttpUtil.downImage(avatarUrl, avatarLocalPath);
 			try {
 				is = new FileInputStream(avatarLocalPath);
-				Log.d(TAG,
-						"download avatar from " + avatarUrl);
+				//Log.d(TAG,
+				//		"download avatar from " + avatarUrl);
 			
 			} catch (FileNotFoundException e) {
 				Log.d(TAG,
@@ -66,7 +66,7 @@ public class AvatarLoadTask extends AsyncTask<String, Integer, Bitmap> {
 		}
 		
 		if(is !=null){
-			Log.d(TAG,"load avatar from file: " + avatarLocalPath);
+			//Log.d(TAG,"load avatar from file: " + avatarLocalPath);
 			bitmap = ImageUtil.loadAvatarFromSdcard(avatarLocalPath);
 		}
 		
