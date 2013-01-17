@@ -3,6 +3,7 @@ package sp.phone.task;
 import gov.pianzong.androidnga.R;
 import sp.phone.fragment.ProgressDialogFragment;
 import sp.phone.utils.HttpUtil;
+import sp.phone.utils.StringUtil;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -83,22 +84,24 @@ public class TudouVideoLoadTask extends AsyncTask<String, Integer, String> {
 		{
 			return null;
 		}
-		final String uri = "http://vr.tudou.com/v2proxy/dispatch?ip=122.143.3.10&type=9&base=0&pw=&code="
+		int index  = params[0].indexOf("/v.swf");
+		if(index != -1){
+			params[0] = params[0].substring(0, index);
+		}
+		final String uri = "http://www.tudou.com/programs/view/html5embed.action?code="
 				+ params[0];
-		final String jsString = HttpUtil.getHtml(uri, null);
-		try{
-			JSONObject o = JSONObject.parseObject(jsString);
-			if(o != null){
-				Object src =  o.get("src");
-				if(src != null && src instanceof String){
-					return (String) src;
-				}
-			}
-		}catch(Exception e){
-			Log.e(this.getClass().getSimpleName(), "can not load tudou video"+ params[0]);
+		final String htmlString = HttpUtil.iosGetHtml(uri, null);
+		final String imgUrl = StringUtil.getStringBetween(
+				htmlString, 0, "poster=\"", "\"").result;
+		if(StringUtil.isEmpty(imgUrl))
+			return null;
+		String m3u8Url = imgUrl.replace("http://i2.tdimg.com", "http://m3u8.tdimg.com");
+		index  = m3u8Url.lastIndexOf('/'); 
+		if(index ==-1){
 			return null;
 		}
-		return null;
+		m3u8Url = m3u8Url.substring(0, index);
+		return m3u8Url+"/3.m3u8";
 	}
 
 }

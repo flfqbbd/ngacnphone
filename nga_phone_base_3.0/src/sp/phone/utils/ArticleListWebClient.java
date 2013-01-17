@@ -28,7 +28,7 @@ public class ArticleListWebClient extends WebViewClient {
 	static private final String NGA178_THREAD_PREFIX ="http://nga.178.com/read.php?"; 
 	static private final String YOUKU_END= "/v.swf";
 	static private final String YOUKU_START = "http://player.youku.com/player.php/sid/";
-	static private final String TUDOU_END= "/&resourceId=";
+	static private final String TUDOU_END= "/";
 	static private final String TUDOU_START = "http://www.tudou.com/v/";
 	//http://www.tudou.com/a/YRxj-HoTxT0/&resourceId=0_04_05_99&iid=146525460/v.swf
 	//http://www.tudou.com/v/Qw74nyAg1wU/&resourceId=0_04_05_99/v.swf

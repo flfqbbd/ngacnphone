@@ -226,6 +226,35 @@ public class HttpUtil {
 		return null;
 	}
 	
+	public static String iosGetHtml(String uri, String cookie) {
+		InputStream is = null;
+		final String ios_ua = "Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
+		try {
+			URL url = new URL(uri);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			if(!StringUtil.isEmpty(cookie))
+				conn.setRequestProperty("Cookie", cookie);
+			conn.setRequestProperty("User-Agent", ios_ua);
+			conn.setRequestProperty("Accept-Charset", "GBK");
+			conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
+			conn.setConnectTimeout(8000);
+			conn.setReadTimeout(8000);
+			conn.connect();
+			is = conn.getInputStream();
+			if( "gzip".equals(conn.getHeaderField("Content-Encoding")) )
+				is = new GZIPInputStream(is);
+			String encoding =  getCharset( conn, "GBK");
+			return IOUtils.toString(is, encoding);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			IOUtils.closeQuietly(is);
+		}
+		return null;
+	}
+	
 	public static String getHtml(String uri, String cookie,String host,int timeout) {
 		InputStream is = null;
 		HostnameVerifier allHostsValid = new HostnameVerifier() {
