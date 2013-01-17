@@ -69,8 +69,12 @@ public class TudouVideoLoadTask extends AsyncTask<String, Integer, String> {
             ft.remove(prev);
             
         }
-
-        ft.commit();
+        try
+        {
+        	ft.commit();
+        }catch(Exception e){
+        	
+        }
 	}
 
 	@Override
