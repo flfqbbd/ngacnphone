@@ -1,13 +1,12 @@
 package sp.phone.utils;
 
-import gov.pianzong.androidnga.activity.ArticleListActivity;
-import gov.pianzong.androidnga.activity.FlexibleTopicListActivity;
 import gov.pianzong.androidnga.activity.ImageViewerActivity;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Locale;
 
 import sp.phone.task.TudouVideoLoadTask;
 import android.annotation.TargetApi;
@@ -45,7 +44,7 @@ public class ArticleListWebClient extends WebViewClient {
 			return true;
 		}
 		PhoneConfiguration conf = PhoneConfiguration.getInstance();
-		final String url = origurl.toLowerCase();
+		final String url = origurl.toLowerCase(Locale.US);
 		if(url.startsWith(NGACN_BOARD_PREFIX)
 				|| url.startsWith(NGA178_BOARD_PREFIX ) ){
 			Intent intent = new Intent();
@@ -156,7 +155,7 @@ public class ArticleListWebClient extends WebViewClient {
 				
 	}*/
 	
-	private InputStream getSmallImgStream(String url){
+	private InputStream getSmallImgStream(final String url){
 		InputStream is = null;
 		try{
 			
@@ -176,7 +175,8 @@ public class ArticleListWebClient extends WebViewClient {
 		return is;
 	}
 
-	private boolean isInWifi(Context activity) {
+	@SuppressWarnings("unused")
+	private boolean isInWifi(final Context activity) {
 		ConnectivityManager conMan = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
 		State wifi = conMan.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
 		return wifi == State.CONNECTED;

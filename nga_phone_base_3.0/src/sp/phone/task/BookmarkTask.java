@@ -1,15 +1,15 @@
 package sp.phone.task;
 
+import gov.pianzong.androidnga.R;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 
 import org.apache.commons.io.IOUtils;
 
-import gov.pianzong.androidnga.R;
 import sp.phone.forumoperation.HttpPostClient;
 import sp.phone.utils.ActivityUtil;
-import sp.phone.utils.HttpUtil;
 import sp.phone.utils.PhoneConfiguration;
 import sp.phone.utils.StringUtil;
 import android.content.Context;

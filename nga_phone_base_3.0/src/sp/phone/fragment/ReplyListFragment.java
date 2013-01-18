@@ -1,10 +1,6 @@
 package sp.phone.fragment;
 
-import gov.pianzong.androidnga.activity.ArticleListActivity;
-
 import java.util.List;
-
-import com.alibaba.fastjson.JSON;
 
 import sp.phone.adapter.PendingReplyAdapter;
 import sp.phone.bean.NotificationObject;
@@ -22,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+
+import com.alibaba.fastjson.JSON;
 
 public class ReplyListFragment extends Fragment
 implements PerferenceConstant{

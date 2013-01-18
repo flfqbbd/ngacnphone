@@ -1,7 +1,6 @@
 package sp.phone.fragment;
 
 import gov.pianzong.androidnga.R;
-import gov.pianzong.androidnga.activity.FlexibleTopicListActivity;
 import gov.pianzong.androidnga.activity.MainActivity;
 import gov.pianzong.androidnga.activity.PostActivity;
 

@@ -1,9 +1,8 @@
 package sp.phone.fragment;
 
+import gov.pianzong.androidnga.R;
 import sp.phone.utils.PhoneConfiguration;
 import sp.phone.utils.StringUtil;
-import gov.pianzong.androidnga.R;
-import gov.pianzong.androidnga.activity.FlexibleTopicListActivity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;

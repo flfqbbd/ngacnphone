@@ -10,7 +10,6 @@ import sp.phone.utils.ReflectionUtil;
 import sp.phone.utils.ThemeManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;

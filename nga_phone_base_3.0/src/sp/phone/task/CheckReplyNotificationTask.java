@@ -2,17 +2,12 @@ package sp.phone.task;
 
 
 
+import gov.pianzong.androidnga.R;
+import gov.pianzong.androidnga.activity.ReplyListActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.alibaba.fastjson.JSON;
-
-import gov.pianzong.androidnga.R;
-import gov.pianzong.androidnga.activity.ReplyListActivity;
 import sp.phone.bean.NotificationObject;
 import sp.phone.bean.PerferenceConstant;
 import sp.phone.bean.StringFindResult;
@@ -31,6 +26,8 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.alibaba.fastjson.JSON;
 
 public class CheckReplyNotificationTask extends
 		AsyncTask<String, Integer, String> 
@@ -51,11 +48,12 @@ implements PerferenceConstant{
 
 			result =HttpUtil.getHtml(url, cookie, null, 3000);
 			//result = "{0:[{0:8,1:553736,2:\"吸片\",3:\"\",4:\"\",5:\"又一个客户端杀手贴\",9:1338737284,6:5222738,7:90295509},{0:8,1:553736,2:\"吸片\",3:\"\",4:\"\",5:\"又一个客户端杀手贴\",9:1338737301,6:5222738,7:90295522}]}";
+			result = "window.script_muti_get_var_store={0:[{0:2,1:425082,2:\"tql1\",3:553736,4:\"吸片\",5:\"中南海的头头脑脑们和帝都屁民一样吸着PM2.5 破1000的空气。。。。真是惨剧\",9:1358445363,8:104027885,6:5920698,7:104028185},{0:7,1:244052,2:\"猫小小\",3:553736,4:\"UID:553736\",5:\"片总救命啊\",9:1358459241,6:5920813,7:\"\"},{0:7,1:244052,2:\"猫小小\",3:553736,4:\"UID:553736\",5:\"片总救命啊\",9:1358459315,6:5920813,7:\"\"}]}";
+			
 			PhoneConfiguration.getInstance().lastMessageCheck
 				= System.currentTimeMillis();
 			Log.i(this.getClass().getSimpleName(), "get message:"+result);
-			//result = "{0:[{0:8,1:1831521,2:\"片总\",3:\"\",4:\"\",5:\"打自己黑枪专用楼层\",9:1339680840,6:5271811,7:91025529},{0:8,1:1831521,2:\"片总\",3:\"\",4:\"\",5:\"打自己黑枪专用楼层\",9:1339680888,6:5271811,7:91025564}]}";
-		return result;
+			return result;
 	}
 
 	@Override
@@ -166,10 +164,17 @@ implements PerferenceConstant{
 		{
 			return;
 		}
+		int pidNum = 0;
+		try{
+			pidNum = Integer.parseInt(pid);
+		}catch(Exception e){
+			pidNum = 0;
+		}
+		
 		if(notificationList.size() >0){
 			NotificationObject last = notificationList.get(notificationList.size()-1);
 			if(last.getTid() == Integer.parseInt(tid)
-					&& last.getPid() == Integer.parseInt(pid)){
+					&& last.getPid() == pidNum){
 				return;
 			}
 		}
@@ -178,11 +183,9 @@ implements PerferenceConstant{
 		o.setAuthorId(Integer.parseInt(authorid));
 		o.setNickName(nickName);
 		o.setTid(Integer.parseInt(tid));
-		try{
-			o.setPid(Integer.parseInt(pid));
-		}catch(Exception e){
-			o.setPid(0);
-		}
+
+		o.setPid(pidNum);
+
 		o.setTitle(title);
 		notificationList.add(o);
 		
@@ -277,7 +280,7 @@ implements PerferenceConstant{
 		// notification.number = 5;
 
 		 notification.defaults = Notification.DEFAULT_LIGHTS;
-		 AudioManager audioManager = (AudioManager)context.getSystemService(context.AUDIO_SERVICE);
+		 AudioManager audioManager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
 		 
 		 if(PhoneConfiguration.getInstance().notificationSound
 				 && audioManager.getRingerMode() ==AudioManager.RINGER_MODE_NORMAL )

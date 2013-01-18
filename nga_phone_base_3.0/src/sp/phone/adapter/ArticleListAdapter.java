@@ -7,15 +7,9 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.ref.SoftReference;
 import java.net.URLEncoder;
-import java.security.InvalidKeyException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 
 import sp.phone.bean.Attachment;
 import sp.phone.bean.AvatarTag;

@@ -3,7 +3,6 @@ package sp.phone.task;
 import sp.phone.adapter.ArticleListAdapter;
 import sp.phone.bean.ThreadRowInfo;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.webkit.WebView;
 
 public class ForumTagDecodTask extends AsyncTask<WebView, Integer, String> {

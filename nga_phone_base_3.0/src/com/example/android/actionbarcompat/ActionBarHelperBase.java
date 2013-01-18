@@ -16,6 +16,12 @@
 
 package com.example.android.actionbarcompat;
 
+import gov.pianzong.androidnga.R;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -33,14 +39,7 @@ import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-
-import gov.pianzong.androidnga.R;
 
 /**
  * A class that implements the action bar pattern for pre-Honeycomb devices.

@@ -1,7 +1,6 @@
 package sp.phone.interfaces;
 
 import gov.pianzong.androidnga.R;
-import gov.pianzong.androidnga.activity.ArticleListActivity;
 import sp.phone.adapter.TopicListAdapter;
 import sp.phone.utils.PhoneConfiguration;
 import sp.phone.utils.StringUtil;
@@ -9,9 +8,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class EnterJsonArticle implements OnItemClickListener {
 
