@@ -303,7 +303,7 @@ public class StringUtil {
 
 	public static String unEscapeHtml(String s){
 		String ret = "";
-		ret = org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(s);
+		ret = StringHelper.unescapeHTML(s);
 		return ret;
 	}
 	
