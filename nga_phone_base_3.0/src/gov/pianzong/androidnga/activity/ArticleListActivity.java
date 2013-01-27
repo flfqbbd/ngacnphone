@@ -378,7 +378,11 @@ PerferenceConstant{
 	@Override
 	protected void onDestroy() {
 		//ActivityUtil.getInstance().dismiss();
-		super.onDestroy();
+		try{
+			super.onDestroy();
+		}catch(Exception e){
+			
+		}
 	}
 
 	@Override

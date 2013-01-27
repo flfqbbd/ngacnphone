@@ -25,7 +25,7 @@ public class SearchDialogFragment extends DialogFragment {
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this.getActivity());  
         final EditText input = new EditText(getActivity());
         //input.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
-        input.setHint("c1521.biz.tm");
+        input.setHint("Ç¿ß£»Ò·ÉÑÌÃð");
         alert.setView(input);  
 		alert.setMessage(R.string.search_hint);
 		
