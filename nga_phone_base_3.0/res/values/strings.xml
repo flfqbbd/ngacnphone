@@ -86,5 +86,6 @@
     <string name="sample_user_level">级别:骷髅党</string>
     <string name="split">按钮在下面(4.0以上)</string>
     <string name="ha">硬件加速(4.0以上)</string>
+    <string name="report">举报</string>
     
 </resources>

@@ -10,6 +10,7 @@ import sp.phone.interfaces.OnThreadPageLoadFinishedListener;
 import sp.phone.interfaces.PagerOwnner;
 import sp.phone.interfaces.ResetableArticle;
 import sp.phone.task.JsonThreadLoadTask;
+import sp.phone.task.ReportTask;
 import sp.phone.utils.ActivityUtil;
 import sp.phone.utils.HttpUtil;
 import sp.phone.utils.PhoneConfiguration;
@@ -185,6 +186,11 @@ public class ArticleListFragment extends Fragment
 		task.executeOnExecutor(JsonThreadLoadTask.THREAD_POOL_EXECUTOR, url);
 	}
 	
+	@TargetApi(11)
+	private void RunParallen(ReportTask task, String url){
+		task.executeOnExecutor(JsonThreadLoadTask.THREAD_POOL_EXECUTOR, url);
+	}
+	
 	private void loadPage(){
 		if(needLoad){
 
@@ -235,6 +241,16 @@ public class ArticleListFragment extends Fragment
 		
 	}
 	
+	private void handleReport(ThreadRowInfo row){
+		String url="http://bbs.ngacn.cc/nuke.php?func=logpost&tid="
+				+ tid + "&pid="+ row.getPid()
+				+"&log";
+		ReportTask task= new ReportTask(getActivity());
+		if(ActivityUtil.isGreaterThan_2_3_3())
+			RunParallen(task, url);
+		else
+			task.execute(url);
+	}
 	
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
@@ -401,6 +417,9 @@ public class ArticleListFragment extends Fragment
 			df.setArguments(b);
 			df.show(ft, dialog_tag);
 			
+			break;
+		case R.id.report:
+			handleReport(row);
 			break;
 		case R.id.search_post:
 			
