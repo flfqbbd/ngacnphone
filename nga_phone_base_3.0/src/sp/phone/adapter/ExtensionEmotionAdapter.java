@@ -487,7 +487,24 @@ public class ExtensionEmotionAdapter extends BaseAdapter {
 					"http://img.ngacn.cc/attachments/mon_201212/24/-1324875_50d841b17b503.png",
 					"http://img.ngacn.cc/attachments/mon_201212/24/-1324875_50d841b488bcd.png",
 					"http://img.ngacn.cc/attachments/mon_201212/24/-1324875_50d841b7282dd.png",
-					"http://img.ngacn.cc/attachments/mon_201212/24/-1324875_50d841ba3efd0.png"
+					"http://img.ngacn.cc/attachments/mon_201212/24/-1324875_50d841ba3efd0.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597c090c58.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597cedefb0.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597e217236.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597e645550.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597e9d6319.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597edf1a10.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597f190a11.png",
+					"http://img.ngacn.cc/attachments/mon_201301/03/-1324875_50e597f5ce78d.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe24fff3ca8.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe25031f595.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe2505d26ed.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe25088e9cb.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe250b9488c.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe250eca35e.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe2511c5254.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe2515354fd.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe25191c370.png"
 				},
 			// bierde
 			{
@@ -583,13 +600,12 @@ public class ExtensionEmotionAdapter extends BaseAdapter {
 			view = (ImageView) convertView;
 			ImageUtil.recycleImageView(view);
 		}
-
 		InputStream is;
 		try {
 			is = view.getContext().getAssets().open(getFileName(position));
 			Bitmap bm = BitmapFactory.decodeStream(is);
-			if (bm.getWidth() > 120) {
-				Bitmap resizedBm = ImageUtil.zoomImageByWidth(bm, 120);
+			if (bm.getHeight() > 130) {
+				Bitmap resizedBm = ImageUtil.zoomImageByHeight(bm, 130);
 				bm.recycle();
 				bm = resizedBm;
 			}

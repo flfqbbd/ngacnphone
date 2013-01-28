@@ -44,6 +44,32 @@ public class ImageUtil {
 		return resizedBitmap;
 
 	}
+	
+	
+	public static Bitmap zoomImageByHeight(Bitmap bitmap, int bookHeight) {
+		if(bitmap == null)
+			return null;
+		int width = bitmap.getWidth();
+		int height = bitmap.getHeight();
+		
+
+		int newHeight = bookHeight;
+		float newWidth = ((width * newHeight) / height);
+		
+		
+		if(newWidth <2 || newHeight < 1.01f)
+			return null;
+		
+		float scaleWidth = 1f * newWidth / width;
+		float scaleHeight = 1f * newHeight / height;
+
+		Matrix matrix = new Matrix();
+		matrix.postScale(scaleWidth, scaleHeight);
+		Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height,
+				matrix, true);
+		return resizedBitmap;
+
+	}
 
 	/**
 	 * 
