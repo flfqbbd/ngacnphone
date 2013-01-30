@@ -20,7 +20,7 @@ public class StringUtil {
 	private static final String styleAlignRight = "<div style='text-align:right' >";
 	private static final String styleAlignLeft = "<div style='text-align:left' >";
 	private static final String styleAlignCenter = "<div style='text-align:center' >";
-	private static final String styleColor = "<div style='color:$1' >";
+	private static final String styleColor = "<span style='color:$1' >";
 	private static final String collapseStart= "<div style='border:1px solid #888' >";
 	private static final String ignoreCaseTag = "(?i)";
 	private static final String endDiv = "</div>";
@@ -188,7 +188,7 @@ public class StringUtil {
 		//s = s.replaceAll("\\[color=([^\\[|\\]]+)\\]\\s*(.+?)\\s*\\[/color\\]"
 		//		,"<b style=\"color:$1\">$2</b>");
 		s=s.replaceAll(ignoreCaseTag +"\\[color=([^\\[|\\]]+)\\]",styleColor);
-		s = s.replaceAll(ignoreCaseTag +"\\[/color\\]", endDiv);
+		s = s.replaceAll(ignoreCaseTag +"\\[/color\\]", "</span>");
 		
 		
 		//lessernuke
