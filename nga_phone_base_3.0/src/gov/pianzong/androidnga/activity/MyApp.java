@@ -27,7 +27,7 @@ import com.alibaba.fastjson.JSON;
 
 public class MyApp extends Application implements PerferenceConstant {
 	final private static String TAG = MyApp.class.getSimpleName();
-	public final static int version = 464;
+	public final static int version = 467;
 	private PhoneConfiguration config = null;
 	boolean newVersion = false;
 	static final String RECENT = "最近访问";
@@ -81,6 +81,7 @@ public class MyApp extends Application implements PerferenceConstant {
 		boards.add(new Board(i, "387", "潘大力亚之迷雾", R.drawable.p387));
 		boards.add(new Board(i, "414", "游戏综合讨论", R.drawable.p414));
 		boards.add(new Board(i, "305", "305权贵区", R.drawable.pdefault));
+		boards.add(new Board(i, "11", "诺森德埋骨地", R.drawable.pdefault));
 		boards.addCategoryName(i, "综合讨论");
 		i++;
 		
