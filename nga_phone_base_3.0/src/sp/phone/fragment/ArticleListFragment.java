@@ -242,14 +242,21 @@ public class ArticleListFragment extends Fragment
 	}
 	
 	private void handleReport(ThreadRowInfo row){
-		String url="http://bbs.ngacn.cc/nuke.php?func=logpost&tid="
+		/*String url="http://bbs.ngacn.cc/nuke.php?func=logpost&tid="
 				+ tid + "&pid="+ row.getPid()
 				+"&log";
 		ReportTask task= new ReportTask(getActivity());
 		if(ActivityUtil.isGreaterThan_2_3_3())
 			RunParallen(task, url);
 		else
-			task.execute(url);
+			task.execute(url);*/
+		DialogFragment df = new ReportDialogFragment();
+		Bundle args = new Bundle();
+		args.putInt("tid", tid);
+		args.putInt("pid", row.getPid());
+		df.setArguments(args);
+		df.show(getFragmentManager(), null);
+
 	}
 	
 	@Override
@@ -459,8 +466,8 @@ public class ArticleListFragment extends Fragment
 		//ArticleListActivity father = (ArticleListActivity) this.getActivity();
 		if(null != data){
 			articleAdpater.setData(data);
-			//articleAdpater.notifyDataSetChanged();
-			articleAdpater.notifyDataSetInvalidated();
+			articleAdpater.notifyDataSetChanged();
+			//articleAdpater.notifyDataSetInvalidated();
 			
 			OnThreadPageLoadFinishedListener father = null;
 			try{
