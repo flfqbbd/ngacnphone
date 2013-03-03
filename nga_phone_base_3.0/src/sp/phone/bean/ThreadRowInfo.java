@@ -54,7 +54,7 @@ public class ThreadRowInfo {
 	private List<ThreadRowInfo> comments;
 	
 	
-	
+	private String formated_html_data;
 	
 	public Map<String, Attachment> getAttachs() {
 		return attachs;
@@ -154,6 +154,12 @@ public class ThreadRowInfo {
 	}
 	public void setMute_time(String mute_time) {
 		this.mute_time = mute_time;
+	}
+	public String getFormated_html_data() {
+		return formated_html_data;
+	}
+	public void setFormated_html_data(String formated_html_data) {
+		this.formated_html_data = formated_html_data;
 	}
 
 

@@ -62,7 +62,7 @@ public class JsonThreadLoadTask extends AsyncTask<String, Integer, ThreadData> {
 			return null;
 		}
 		
-		ThreadData result =ArticleUtil.parseJsonThreadPage(js);
+		ThreadData result = new ArticleUtil(context).parseJsonThreadPage(js);
 		
 		if(null == result){
 			errorStr = context.getResources().getString(R.string.thread_load_error);

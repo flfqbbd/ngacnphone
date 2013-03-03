@@ -3,10 +3,14 @@ package sp.phone.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import sp.phone.adapter.ArticleListAdapter;
 import sp.phone.bean.ArticlePage;
 import sp.phone.bean.ThreadData;
 import sp.phone.bean.ThreadPageInfo;
 import sp.phone.bean.ThreadRowInfo;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo.State;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
@@ -15,6 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public class ArticleUtil {
 	private final static String TAG = ArticleUtil.class.getSimpleName();
+
+
 	public static ArticlePage parserArticleList(String html)
 {
 
@@ -210,7 +216,26 @@ public class ArticleUtil {
 		return null;
 	}
 
-	public static ThreadData parseJsonThreadPage(String js){
+	private Context context;
+	
+	
+	
+	public ArticleUtil(Context context) {
+		super();
+		this.context = context;
+	}
+
+	private boolean isInWifi(){
+		ConnectivityManager conMan = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		State wifi = conMan.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
+		return wifi == State.CONNECTED;
+	}
+	
+	private boolean isShowImage(){
+		return PhoneConfiguration.getInstance().isDownImgNoWifi() || isInWifi();
+	}
+	
+	public  ThreadData parseJsonThreadPage(String js){
 		js = js.replaceAll("\"content\":\\+(\\d+),", "\"content\":\"+$1\",");
 		js = js.replaceAll("\"subject\":\\+(\\d+),", "\"subject\":\"+$1\",");
 		
@@ -273,12 +298,14 @@ public class ArticleUtil {
 	}
 
 	
-	static private List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap,
+	private List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap,
 			int count) {
 		List<ThreadRowInfo> __R = new ArrayList<ThreadRowInfo>();
 
 		if (rowMap == null)
 			return null;
+		
+		
 		for (int i = 0; i < count; i++) {
 			JSONObject rowObj = (JSONObject) rowMap.get(String.valueOf(i));
 			ThreadRowInfo row = null;
@@ -291,6 +318,11 @@ public class ArticleUtil {
 
 					row.setComments(convertJSobjToList(commObj));
 				}
+				
+				
+				fillFormated_html_data(row,i);
+				
+				
 				__R.add(row);
 			}
 			
@@ -298,10 +330,30 @@ public class ArticleUtil {
 		return __R;
 	}
 	
-private static  List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap){
+	private List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap){
 		
 		return convertJSobjToList(rowMap,rowMap.size());
 	}
-	
+
+	private void fillFormated_html_data(ThreadRowInfo row,int i){
+		
+		ThemeManager theme = ThemeManager.getInstance();
+		if(row.getContent()== null){
+			row.setContent(row.getSubject());
+			row.setSubject(null);
+		}
+		int bgColor = context.getResources().getColor(theme.getBackgroundColor(i));
+		int fgColor = context.getResources().getColor(theme.getForegroundColor());
+		bgColor = bgColor & 0xffffff;
+		final String bgcolorStr = String.format("%06x",bgColor);
+		
+		int htmlfgColor = fgColor & 0xffffff;
+		final String fgColorStr = String.format("%06x",htmlfgColor);
+		
+		String formated_html_data = ArticleListAdapter.convertToHtmlText(
+				row,isShowImage(), fgColorStr, bgcolorStr);
+		
+		row.setFormated_html_data(formated_html_data);
+	}
 	
 }

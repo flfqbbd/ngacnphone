@@ -232,16 +232,9 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		return ngaHtml;
 	}
 	
-	private void handleContentTV(final WebView contentTV,final ThreadRowInfo row,int bgColorId,int bgColor,int fgColor){
+	private void handleContentTV(final WebView contentTV,final ThreadRowInfo row,int bgColor,int fgColor){
 		
 		contentTV.setBackgroundColor(0);
-		/*if(ActivityUtil.isGreaterThan_2_3_3() &&
-				ActivityUtil.islessThan_4_1())
-			setLayerType(contentTV);*/
-		
-		
-		
-		//contentTV.setClickable(false);
 		contentTV.setFocusableInTouchMode(false);
 		contentTV.setFocusable(false);
 		if(ActivityUtil.isGreaterThan_2_2())
@@ -250,7 +243,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 			contentTV.setLongClickable(false);
 		}
 		
-		bgColor = bgColor & 0xffffff;
+		/*bgColor = bgColor & 0xffffff;
 		final String bgcolorStr = String.format("%06x",bgColor);
 		
 		int htmlfgColor = fgColor & 0xffffff;
@@ -258,69 +251,30 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		if(row.getContent()== null){
 			row.setContent(row.getSubject());
 			row.setSubject(null);
-		}
+		}*/
 		
-		boolean showImage = PhoneConfiguration.getInstance().isDownImgNoWifi() || isInWifi();
-		//showImage = showImage || ActivityUtil.isGreaterThan_2_3_3();
-		//String ngaHtml = convertToHtmlText(row, showImage, fgColorStr, bgcolorStr);
-		
-		/*StringUtil.decodeForumTag(row.getContent(),showImage);
-		if(StringUtil.isEmpty(ngaHtml)){
-			ngaHtml = row.getAlterinfo();
-		}
-		if(StringUtil.isEmpty(ngaHtml)){
-			
-			ngaHtml= "<font color='red'>[вўВи]</font>";
-		}
-		ngaHtml = ngaHtml + buildComment(row,fgColorStr) + buildAttachment(row,showImage)
-				+ buildSignature(row,showImage);
-		ngaHtml = "<HTML> <HEAD><META   http-equiv=Content-Type   content= \"text/html;   charset=utf-8 \">" 
-			+ "<body bgcolor= '#"+ bgcolorStr +"'>"
-			+ "<font color='#"+ fgColorStr + "' size='2'>"
-			+ ngaHtml + 
-			"</font></body>";*/
-
-		
-
-			
+		boolean showImage = PhoneConfiguration.getInstance().isDownImgNoWifi() || isInWifi();	
 		
 		WebSettings setting = contentTV.getSettings();
-		if(!showImage )
-			setting.setBlockNetworkImage(true);
-		else
-			setting.setBlockNetworkImage(false);
+		setting.setBlockNetworkImage(!showImage);
 		setting.setDefaultFontSize(
 				PhoneConfiguration.getInstance().getWebSize());
 		setting.setJavaScriptEnabled(false);
-		//setting.setPluginState(WebSettings.PluginState.OFF);
 		contentTV.setWebViewClient(client);
 
 
 		
 		contentTV.setTag(row.getLou());
-		contentTV.loadDataWithBaseURL(null,"loading", "text/html", "utf-8",null);
+		contentTV.loadDataWithBaseURL(null,row.getFormated_html_data(), "text/html", "utf-8",null);
 
+		/*
 		ForumTagDecodTask task= new ForumTagDecodTask(row, showImage, fgColorStr, bgcolorStr);
 		if(ActivityUtil.isGreaterThan_2_3_3()){
 			excuteOnExcutor(task,contentTV);
 		}else{
 			task.execute(contentTV);
-		}
-		//boolean postResult = true;
-		
-		/*postResult = contentTV.postDelayed(new Runnable(){
+		}*/
 
-			@Override
-			public void run() {
-				Log.d(TAG, "load content for "+ lou);
-				//contentTV.loadDataWithBaseURL(null,htmlData, "text/html", "utf-8",null);
-				contentTV.in
-			}
-			
-		}, delay);*/
-		//contentTV.loadDataWithBaseURL(null,ngaHtml, "text/html", "utf-8",null);
-
-		
 	}
 	
 	@TargetApi(11)
@@ -499,7 +453,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		int bgColor = parent.getContext().getResources().getColor(colorId);
 
 		WebView contentTV = holder.contentTV;
-		handleContentTV(contentTV, row, colorId, bgColor, fgColor);
+		handleContentTV(contentTV, row,  bgColor, fgColor);
 
 
 		final String floor = String.valueOf(lou);
