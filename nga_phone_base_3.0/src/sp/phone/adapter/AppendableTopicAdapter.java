@@ -35,6 +35,9 @@ public class AppendableTopicAdapter extends TopicListAdapter {
 			List<ThreadPageInfo> threadList = new ArrayList<ThreadPageInfo>();
 			for (int i = 0; i < result.getArticleEntryList().size(); i++) {
 				ThreadPageInfo info = result.getArticleEntryList().get(i);
+				if(info == null){
+					continue;
+				}
 				int tid = info.getTid();
 				if (!tidSet.contains(tid)) {
 					threadList.add(info);
@@ -46,6 +49,9 @@ public class AppendableTopicAdapter extends TopicListAdapter {
 		}else{
 			for (int i = 0; i < result.getArticleEntryList().size(); i++) {
 				ThreadPageInfo info = result.getArticleEntryList().get(i);
+				if(info == null){
+					continue;
+				}
 				int tid = info.getTid();
 				tidSet.add(tid);
 			}
