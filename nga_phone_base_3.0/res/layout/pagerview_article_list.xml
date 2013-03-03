@@ -25,7 +25,8 @@
             xmlns:ptr="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pull_refresh_viewpager"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             ptr:ptrAnimationStyle="flip"
             ptr:ptrHeaderBackground="@android:color/black"
             ptr:ptrMode="disabled" />

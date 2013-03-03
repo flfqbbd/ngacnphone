@@ -45,9 +45,7 @@ import com.example.android.actionbarcompat.ActionBarActivity;
 import com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 
 public class ArticleListActivity extends ActionBarActivity
 implements PagerOwnner,ResetableArticle,OnThreadPageLoadFinishedListener,
@@ -64,6 +62,7 @@ PerferenceConstant{
 	
 	protected int getViewId(){
 		return R.layout.pagerview_article_list;
+		//return R.layout.article_viewpager;
 	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +112,7 @@ PerferenceConstant{
 		authorid = this.getIntent().getIntExtra("authorid", 0);
 		}
 	
+		View v = findViewById(android.R.id.content);//.getChildAt(0);
 		tabhost = (TabHost) findViewById(android.R.id.tabhost);
 		
 		if(tabhost != null)
