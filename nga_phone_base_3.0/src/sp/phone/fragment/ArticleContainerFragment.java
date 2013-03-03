@@ -1,5 +1,8 @@
 package sp.phone.fragment;
 
+import com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
+
 import gov.pianzong.androidnga.R;
 import gov.pianzong.androidnga.activity.PostActivity;
 import sp.phone.adapter.ThreadFragmentAdapter;
@@ -65,7 +68,11 @@ PagerOwnner{
 		View v  = inflater.inflate(R.layout.article_viewpager, container,false);
 
 
-		mViewPager = (ViewPager) v.findViewById(R.id.pager);
+		PullToRefreshViewPager
+		refreshPager = (PullToRefreshViewPager) v.findViewById(R.id.pull_refresh_viewpager);
+		//refreshPager.setMode(Mode.DISABLED);
+		mViewPager = refreshPager.getRefreshableView();
+		//mViewPager = (ViewPager) v.findViewById(R.id.pager);
 
 		int pageFromUrl = 0;
 		String url = getArguments().getString("url");

@@ -42,6 +42,12 @@ import android.widget.ImageButton;
 import android.widget.TabHost;
 
 import com.example.android.actionbarcompat.ActionBarActivity;
+import com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 
 public class ArticleListActivity extends ActionBarActivity
 implements PagerOwnner,ResetableArticle,OnThreadPageLoadFinishedListener,
@@ -72,8 +78,22 @@ PerferenceConstant{
 			ActivityUtil.reflushLocation(this);
 		}
 		
+		PullToRefreshViewPager
+		refreshPager = (PullToRefreshViewPager) findViewById(R.id.pull_refresh_viewpager);
+		refreshPager.setMode(Mode.PULL_FROM_START);
+		refreshPager.setOnRefreshListener(new OnRefreshListener<ViewPager>(){
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ViewPager> refreshView) {
+				finish();
+				
+			}
+			
+		});
 		
-		mViewPager = (ViewPager)findViewById(R.id.pager);
+		mViewPager = refreshPager.getRefreshableView();
+		
+		//mViewPager = (ViewPager)findViewById(R.id.pager);
 		if (ActivityUtil.isNotLessThan_4_0()) {			
 			setNfcCallBack();
 		}
