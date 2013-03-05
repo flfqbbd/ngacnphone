@@ -50,6 +50,8 @@ implements PerferenceConstant{
 			//result = "{0:[{0:8,1:553736,2:\"吸片\",3:\"\",4:\"\",5:\"又一个客户端杀手贴\",9:1338737284,6:5222738,7:90295509},{0:8,1:553736,2:\"吸片\",3:\"\",4:\"\",5:\"又一个客户端杀手贴\",9:1338737301,6:5222738,7:90295522}]}";
 			//result = "window.script_muti_get_var_store={0:[{0:2,1:425082,2:\"tql1\",3:553736,4:\"吸片\",5:\"中南海的头头脑脑们和帝都屁民一样吸着PM2.5 破1000的空气。。。。真是惨剧\",9:1358445363,8:104027885,6:5920698,7:104028185},{0:7,1:244052,2:\"猫小小\",3:553736,4:\"UID:553736\",5:\"片总救命啊\",9:1358459241,6:5920813,7:\"\"},{0:7,1:244052,2:\"猫小小\",3:553736,4:\"UID:553736\",5:\"片总救命啊\",9:1358459315,6:5920813,7:\"\"}]}";
 			
+			//window.script_muti_get_var_store={0:[{0:2,1:7943930,2:"thank243",3:553736,4:"吸片",5:"四儿子和i9300选哪个呀？",9:1362490539,8:106720464,6:6033139,7:106720680,10:1}]}
+			
 			PhoneConfiguration.getInstance().lastMessageCheck
 				= System.currentTimeMillis();
 			Log.i(this.getClass().getSimpleName(), "get message:"+result);
@@ -136,7 +138,7 @@ implements PerferenceConstant{
 			String pid = result.substring(start, end);
 			start = end;*/
 			
-			ret = StringUtil.getStringBetween(result,start, ":", "}");
+			ret = StringUtil.getStringBetween(result,start, ":", ",10:");
 			String pid = ret.result;
 			if(!StringUtil.isEmpty(ret.result))
 				start = ret.position;

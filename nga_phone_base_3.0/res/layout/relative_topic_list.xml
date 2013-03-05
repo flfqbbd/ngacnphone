@@ -9,16 +9,16 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/page"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:textIsSelectable="false" />
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:layout_toRightOf="@id/num"
-        android:textColor="@color/black" />
-
+        android:textColor="@color/black"
+        android:textIsSelectable="false" />
     <TextView
         android:id="@+id/author"
         android:layout_width="wrap_content"
@@ -28,9 +28,9 @@
         android:layout_marginRight="10dip"
         android:gravity="right"
         android:textColor="@color/page"
-        android:textSize="10dp"
+        android:textSize="12sp"
+        android:textIsSelectable="false"
         android:textStyle="bold" />
-
     <TextView
         android:id="@+id/last_reply"
         android:layout_width="wrap_content"
@@ -39,7 +39,8 @@
         android:layout_below="@id/title"
         android:gravity="right"
         android:textColor="@color/page"
-        android:textSize="10dp"
+        android:textSize="12sp"
+        android:textIsSelectable="false"
         android:textStyle="bold" />
 
 </RelativeLayout>
