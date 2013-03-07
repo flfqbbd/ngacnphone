@@ -130,6 +130,11 @@ implements PerferenceConstant{
 				break;
 			
 			String tid = ret.result;
+			if(tid.indexOf('}') >0){
+				tid = tid.substring(0, tid.indexOf('}'));
+			}
+			
+			
 			start = ret.position;
 			
 			
@@ -142,6 +147,8 @@ implements PerferenceConstant{
 			String pid = ret.result;
 			if(!StringUtil.isEmpty(ret.result))
 				start = ret.position;
+			else
+				pid = "0";
 			
 			
 			
