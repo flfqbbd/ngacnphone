@@ -155,8 +155,8 @@ public class TopicListFragment extends Fragment
 		}
 		
 		adapter.jsonfinishLoad(result);
-		listview.setAdapter(adapter);
-
+		//listview.setAdapter(adapter);
+		adapter.notifyDataSetChanged();
 		
 		if(getArguments().getInt("searchpost",0) != 0){
 			int page = 1 + getArguments().getInt("page",0);
