@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+<LinearLayout android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView android:layout_height="wrap_content"  android:layout_width="fill_parent"  android:layout_marginLeft="10dp" android:id="@+id/login_user_text" android:text="@string/username" android:layout_marginTop="5dp"></TextView>
+    <TextView
+        android:id="@+id/login_user_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="@string/username" >
+</TextView>
 
     <EditText
         android:id="@+id/login_user_edittext"
@@ -17,9 +24,11 @@
         android:cursorVisible="true"
         android:hint="@string/login_user_hint"
         android:inputType="text|textNoSuggestions"
+        android:singleLine="true"
         android:text=""
         android:textColor="@color/black"
         android:textCursorDrawable="@null" >
+
 </EditText>
     <TextView android:layout_height="wrap_content"  android:id="@+id/login_password_text" android:layout_width="fill_parent" android:layout_marginLeft="10dp" android:text="@string/password" android:layout_marginTop="5dp"></TextView>
 
@@ -33,6 +42,7 @@
         android:background="@color/white"
         android:cursorVisible="true"
         android:inputType="text|textPassword"
+        android:singleLine="true"
         android:textColor="@color/black"
         android:textCursorDrawable="@null" >
 
