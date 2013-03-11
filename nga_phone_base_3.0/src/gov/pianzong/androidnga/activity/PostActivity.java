@@ -15,16 +15,21 @@ import sp.phone.forumoperation.ThreadPostAction;
 import sp.phone.fragment.EmotionCategorySelectFragment;
 import sp.phone.fragment.EmotionDialogFragment;
 import sp.phone.fragment.ExtensionEmotionFragment;
+import sp.phone.fragment.TopiclistContainer;
 import sp.phone.interfaces.EmotionCategorySelectedListener;
 import sp.phone.interfaces.OnEmotionPickedListener;
 import sp.phone.task.FileUploadTask;
 import sp.phone.utils.ActivityUtil;
 import sp.phone.utils.Des;
 import sp.phone.utils.PhoneConfiguration;
+import sp.phone.utils.ReflectionUtil;
 import sp.phone.utils.StringUtil;
 import sp.phone.utils.ThemeManager;
 import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActionBar.OnNavigationListener;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
@@ -35,10 +40,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -60,10 +68,11 @@ public class PostActivity extends FragmentActivity
 	private String action;
 	private String tid;
 	private int fid;
-	private Button button_commit;
-	private Button button_cancel;
-	private ImageButton button_upload;
-	private ImageButton button_emotion;
+	//private Button button_commit;
+	//private Button button_cancel;
+	//private ImageButton button_upload;
+	//private ImageButton button_emotion;
+	Object commit_lock = new Object();
 	private Spinner userList;
 	private String REPLY_URL="http://bbs.ngacn.cc/post.php?";
 	final int REQUEST_CODE_SELECT_PIC = 1;
@@ -151,7 +160,7 @@ public class PostActivity extends FragmentActivity
 			titleText.setTextColor(textColor);
 		}
 
-		
+		/*
 		button_commit = (Button)findViewById(R.id.reply_commit_button);
 		button_cancel = (Button)findViewById(R.id.reply_cancel_button);
 		button_upload = (ImageButton) findViewById(R.id.imageButton_upload);
@@ -197,31 +206,100 @@ public class PostActivity extends FragmentActivity
 			}
 			
 		}
-		);
+		);*/
+		
 		
 		userList = (Spinner) findViewById(R.id.user_list);
-		SpinnerUserListAdapter adapter = new SpinnerUserListAdapter(this);
-		userList.setAdapter(adapter);
-		userList.setOnItemSelectedListener(new OnItemSelectedListener(){
+		if (userList != null) {
+			SpinnerUserListAdapter adapter = new SpinnerUserListAdapter(this);
+			userList.setAdapter(adapter);
+			userList.setOnItemSelectedListener(new OnItemSelectedListener() {
 
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view,
-					int position, long id) {
-				User u = (User) parent.getItemAtPosition(position);
-				MyApp app = (MyApp) getApplication();
-				app.addToUserList(u.getUserId(), u.getCid(), u.getNickName());
-				PhoneConfiguration.getInstance().setUid(u.getUserId());
-				PhoneConfiguration.getInstance().setCid(u.getCid());
-				
-			}
+				@Override
+				public void onItemSelected(AdapterView<?> parent, View view,
+						int position, long id) {
+					User u = (User) parent.getItemAtPosition(position);
+					MyApp app = (MyApp) getApplication();
+					app.addToUserList(u.getUserId(), u.getCid(),
+							u.getNickName());
+					PhoneConfiguration.getInstance().setUid(u.getUserId());
+					PhoneConfiguration.getInstance().setCid(u.getCid());
 
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-			}
-			
-		});
+				}
+
+				@Override
+				public void onNothingSelected(AdapterView<?> parent) {
+				}
+
+			});
+		}else{
+			this.setNavigation();
+		}
 	}
 	
+	@TargetApi(11)
+	private void setNavigation(){
+		ActionBar actionBar = getActionBar();
+		 actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+		 
+		 final SpinnerUserListAdapter categoryAdapter = new SpinnerUserListAdapter(this);
+		 OnNavigationListener callback = new OnNavigationListener(){
+
+			@Override
+			public boolean onNavigationItemSelected(int itemPosition,
+					long itemId) {
+				User u = (User)categoryAdapter.getItem(itemPosition);
+				MyApp app = (MyApp) getApplication();
+				app.addToUserList(u.getUserId(), u.getCid(),
+						u.getNickName());
+				PhoneConfiguration.getInstance().setUid(u.getUserId());
+				PhoneConfiguration.getInstance().setCid(u.getCid());
+				return true;
+			}
+			 
+		 };
+		actionBar.setListNavigationCallbacks(categoryAdapter, callback);
+	}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		 getMenuInflater().inflate(R.menu.post_menu, menu);
+		 final int flags = ThemeManager.ACTION_BAR_FLAG;
+		 ReflectionUtil.actionBar_setDisplayOption(this, flags);
+		 return true;
+	}
+
+	private ButtonCommitListener commitListener = null;
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId()){
+		case R.id.upload :
+            Intent intent = new Intent();  
+            intent.setType("image/*");  
+            intent.setAction(Intent.ACTION_GET_CONTENT);   
+            startActivityForResult(intent,  REQUEST_CODE_SELECT_PIC);  
+            break;
+		case R.id.emotion:
+			FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+			Fragment prev = getSupportFragmentManager().findFragmentByTag
+					(EMOTION_CATEGORY_TAG);
+			if (prev != null) {
+	            ft.remove(prev);
+	        }
+
+	        DialogFragment newFragment = new EmotionCategorySelectFragment();
+	        newFragment.show(ft, EMOTION_CATEGORY_TAG);
+			break;
+		case R.id.send:
+			if(commitListener == null)
+			{
+				commitListener = new ButtonCommitListener(REPLY_URL);
+			}
+			commitListener.onClick(null);
+			break;
+		}
+		return true;
+	}
+
 	@Override
 	public void onEmotionPicked(String emotion){
 		bodyText.setText( bodyText.getText().toString() + emotion);
@@ -306,7 +384,7 @@ public class PostActivity extends FragmentActivity
 		}
 		@Override
 		public void onClick(View v) {
-			synchronized(button_commit){
+			synchronized(commit_lock){
 				if(loading == true){
 					String avoidWindfury = PostActivity.this.getString(R.string.avoidWindfury);
 					Toast.makeText(PostActivity.this, avoidWindfury, Toast.LENGTH_SHORT).show();
@@ -328,7 +406,7 @@ public class PostActivity extends FragmentActivity
 			
 		}
 		
-		public void handleReply(View v) {
+		public void handleReply(View v1) {
 
 
 			act.setPost_subject_(titleText.getText().toString());
@@ -338,7 +416,7 @@ public class PostActivity extends FragmentActivity
 				act.setPost_content_(bodyString + buildSig());
 			else
 				act.setPost_content_(bodyString);	
-			new ArticlePostTask(v).execute(url,act.toString());
+			new ArticlePostTask(PostActivity.this).execute(url,act.toString());
 
 			
 			
@@ -349,24 +427,24 @@ public class PostActivity extends FragmentActivity
 	
 	private class ArticlePostTask extends AsyncTask<String, Integer, String>{
 
-		final View v;
+		final Context c;
 		private final String result_start_tag = "<span style='color:#aaa'>&gt;</span>";
 		private final String result_end_tag = "<br/>";
 		private boolean keepActivity = false;
-		public ArticlePostTask(View v) {
+		public ArticlePostTask(Context context) {
 			super();
-			this.v = v;
+			this.c = context;
 		}
 		
 		@Override
 		protected void onPreExecute() {
-			ActivityUtil.getInstance().noticeSaying(v.getContext());
+			ActivityUtil.getInstance().noticeSaying(c);
 			super.onPreExecute();
 		}
 
 		@Override
 		protected void onCancelled() {
-			synchronized(button_commit){
+			synchronized(commit_lock){
 				loading = false;
 			}
 			ActivityUtil.getInstance().dismiss();
@@ -375,7 +453,7 @@ public class PostActivity extends FragmentActivity
 
 		@Override
 		protected void onCancelled(String result) {
-			synchronized(button_commit){
+			synchronized(commit_lock){
 				loading = false;
 			}
 			ActivityUtil.getInstance().dismiss();
@@ -448,13 +526,13 @@ public class PostActivity extends FragmentActivity
 					keepActivity = true;
 			}
 			
-			Toast.makeText(v.getContext(), result,
+			Toast.makeText(c, result,
 					Toast.LENGTH_LONG).show();
 			PhoneConfiguration.getInstance().setRefreshAfterPost(true);
 			ActivityUtil.getInstance().dismiss();
 			if(!keepActivity)
 				PostActivity.this.finish();
-			synchronized(button_commit){
+			synchronized(commit_lock){
 				loading = false;
 			}
 				
