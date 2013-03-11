@@ -125,14 +125,14 @@ public class TopicListAdapter extends BaseAdapter
 		int nightLinkColor = res.getColor(R.color.night_link_color);
 		if(theme.getMode() == ThemeManager.MODE_NIGHT )
 			night  = true;
-		holder.author.setText("楼主:" + entry.getAuthor());
+		holder.author.setText(entry.getAuthor());
 		if(night)
 			holder.author.setTextColor(nightLinkColor);
 			
 		String lastPoster = entry.getLastposter_org();
 		if(StringUtil.isEmpty(lastPoster))
 			lastPoster = entry.getLastposter();
-		holder.lastReply.setText("最后回复:" + lastPoster);
+		holder.lastReply.setText(lastPoster);
 		holder.num.setText("" + entry.getReplies());
 		if(night)
 		{

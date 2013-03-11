@@ -89,5 +89,6 @@
     <string name="report">举报</string>
     <string name="reportdialog_description">不要仅仅因为意见不同而举报</string>
     <string name="report_confirm">举报确认</string>
+    <string name="emotion">表情</string>
     
 </resources>
