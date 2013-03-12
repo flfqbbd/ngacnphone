@@ -15,7 +15,6 @@ import sp.phone.forumoperation.ThreadPostAction;
 import sp.phone.fragment.EmotionCategorySelectFragment;
 import sp.phone.fragment.EmotionDialogFragment;
 import sp.phone.fragment.ExtensionEmotionFragment;
-import sp.phone.fragment.TopiclistContainer;
 import sp.phone.interfaces.EmotionCategorySelectedListener;
 import sp.phone.interfaces.OnEmotionPickedListener;
 import sp.phone.task.FileUploadTask;
@@ -27,8 +26,8 @@ import sp.phone.utils.StringUtil;
 import sp.phone.utils.ThemeManager;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.ActionBar.OnNavigationListener;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -36,7 +35,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -46,14 +44,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class PostActivity extends FragmentActivity
+import com.example.android.actionbarcompat.ActionBarActivity;
+
+public class PostActivity extends ActionBarActivity
 	implements FileUploadTask.onFileUploaded,
 	EmotionCategorySelectedListener,
 	OnEmotionPickedListener{
@@ -263,7 +260,12 @@ public class PostActivity extends FragmentActivity
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		 getMenuInflater().inflate(R.menu.post_menu, menu);
-		 final int flags = ThemeManager.ACTION_BAR_FLAG;
+		 final int flags = 7;
+		 /*
+		  * ActionBar.DISPLAY_SHOW_HOME;//2
+			flags |= ActionBar.DISPLAY_USE_LOGO;//1
+			flags |= ActionBar.DISPLAY_HOME_AS_UP;//4
+		  */
 		 ReflectionUtil.actionBar_setDisplayOption(this, flags);
 		 return true;
 	}
@@ -296,6 +298,8 @@ public class PostActivity extends FragmentActivity
 			}
 			commitListener.onClick(null);
 			break;
+		default:
+			finish();
 		}
 		return true;
 	}
