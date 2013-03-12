@@ -504,7 +504,22 @@ public class ExtensionEmotionAdapter extends BaseAdapter {
 					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe250eca35e.png",
 					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe2511c5254.png",
 					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe2515354fd.png",
-					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe25191c370.png"
+					"http://img6.ngacn.cc/attachments/mon_201301/22/-1324875_50fe25191c370.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a32e14f324.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a32e41a1c9.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a32ea8cbd2.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a32ed356aa.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a32f1a0345.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a32f4bdcab.png",
+					"http://img6.ngacn.cc/attachments/mon_201301/31/-1324875_510a335b9300d.png",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_513394f5c39c4.png",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_513394f8d0005.png",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_513394fbc54e1.gif",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_513394ffb78e2.gif",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_51339502d110b.gif",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_51339506d9c37.png",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_51339509ac4b4.png",
+					"http://img6.ngacn.cc/attachments/mon_201303/04/-1324875_5133950d008f9.png"
 				},
 			// bierde
 			{

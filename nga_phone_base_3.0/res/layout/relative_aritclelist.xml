@@ -3,7 +3,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content" android:descendantFocusability="blocksDescendants">
-    <TextView android:layout_alignParentLeft="true" android:layout_height="wrap_content" android:layout_width="100dip" android:id="@+id/nickName" android:textStyle="bold"></TextView>
+    <TextView android:layout_alignParentLeft="true" android:layout_height="wrap_content" android:layout_width="100dip" android:id="@+id/nickName" android:textStyle="bold"
+        android:textIsSelectable="false"></TextView>
 
     <ImageView
         android:id="@+id/avatarImage"
@@ -26,6 +27,6 @@
         android:layout_below="@id/nickName"
         android:layout_toRightOf="@id/avatarImage" />
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/nickName" android:layout_alignTop="@+id/nickName" android:id="@+id/floor"></TextView>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@+id/floor" android:layout_alignParentRight="true" android:id="@+id/postTime"></TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" android:layout_toRightOf="@+id/nickName" android:layout_alignTop="@+id/nickName" android:id="@+id/floor"></TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" android:layout_alignTop="@+id/floor" android:layout_alignParentRight="true" android:id="@+id/postTime"></TextView>
 </RelativeLayout>
