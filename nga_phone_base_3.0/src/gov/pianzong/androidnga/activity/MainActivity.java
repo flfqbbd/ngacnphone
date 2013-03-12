@@ -143,7 +143,7 @@ public class MainActivity extends ActionBarActivity
 	}
 
 	public boolean isTablet() {
-	    boolean xlarge = ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE);
+	    boolean xlarge = ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == 0x04);//Configuration.SCREENLAYOUT_SIZE_XLARGE);
 	    boolean large = ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE);
 	    return (xlarge || large) && ActivityUtil.isGreaterThan_2_3_3();
 	}

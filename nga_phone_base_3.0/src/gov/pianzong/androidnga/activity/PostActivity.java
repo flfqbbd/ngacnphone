@@ -307,7 +307,7 @@ public class PostActivity extends FragmentActivity
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if(resultCode == RESULT_CANCELED )
+		if(resultCode == RESULT_CANCELED ||data == null )
 			return;
 		switch(requestCode)
 		{
