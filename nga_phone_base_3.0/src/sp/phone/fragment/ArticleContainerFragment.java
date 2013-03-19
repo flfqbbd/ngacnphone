@@ -1,8 +1,5 @@
 package sp.phone.fragment;
 
-import com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
-
 import gov.pianzong.androidnga.R;
 import gov.pianzong.androidnga.activity.PostActivity;
 import sp.phone.adapter.ThreadFragmentAdapter;
@@ -35,6 +32,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager;
 
 public class ArticleContainerFragment extends Fragment 
 implements OnThreadPageLoadFinishedListener,PerferenceConstant,
@@ -290,6 +289,8 @@ PagerOwnner{
 				&&this.authorid == 0){
 			mTabsAdapter.setCount(exactCount);
 		}
+		if( tid != data.getThreadInfo().getTid()) // mirror thread
+			tid = data.getThreadInfo().getTid();
 		
 		
 	}

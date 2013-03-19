@@ -396,16 +396,6 @@ PerferenceConstant{
 
 
 	@Override
-	protected void onDestroy() {
-		//ActivityUtil.getInstance().dismiss();
-		try{
-			super.onDestroy();
-		}catch(Exception e){
-			
-		}
-	}
-
-	@Override
 	public void reset(int pid, int authorid,int floor) {
 		this.pid = pid;
 		this.authorid = authorid;
@@ -457,6 +447,8 @@ PerferenceConstant{
 				&&this.authorid == 0){
 			mTabsAdapter.setCount(exactCount);
 		}
+		if( tid != data.getThreadInfo().getTid()) // mirror thread
+			tid = data.getThreadInfo().getTid();
 		fid = data.getThreadInfo().getFid();
 		setTitle(StringUtil.unEscapeHtml(data.getThreadInfo().getSubject()));
 		

@@ -467,7 +467,9 @@ public class ArticleListFragment extends Fragment
 		if(null != data){
 			articleAdpater.setData(data);
 			articleAdpater.notifyDataSetChanged();
-			//articleAdpater.notifyDataSetInvalidated();
+
+			if( 0 != data.getThreadInfo().getQuote_from())
+				tid = data.getThreadInfo().getQuote_from();
 			
 			OnThreadPageLoadFinishedListener father = null;
 			try{
