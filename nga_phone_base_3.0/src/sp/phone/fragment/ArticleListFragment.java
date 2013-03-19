@@ -258,7 +258,11 @@ public class ArticleListFragment extends Fragment
 		df.show(getFragmentManager(), null);
 
 	}
-	
+	private boolean isComment(ThreadRowInfo row){
+		
+		return row.getAlterinfo() == null && row.getAttachs() == null && row.getComments() == null
+				&& row.getJs_escap_avatar() == null && row.getLevel() == null && row.getSignature() == null;
+	}
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		
@@ -359,6 +363,10 @@ public class ArticleListFragment extends Fragment
 						R.anim.zoom_exit);
 			break;
 		case R.id.edit :
+			if(isComment(row)){
+				Toast.makeText(getActivity(), R.string.cannot_eidt_comment, Toast.LENGTH_SHORT).show();
+				break;
+			}
 			Intent intentModify = new Intent();
 			intentModify.putExtra("prefix", StringUtil.unEscapeHtml(StringUtil.removeBrTag(content)));
 			intentModify.putExtra("tid", tidStr);
