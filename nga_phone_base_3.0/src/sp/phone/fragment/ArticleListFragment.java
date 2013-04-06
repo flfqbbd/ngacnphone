@@ -199,7 +199,7 @@ public class ArticleListFragment extends Fragment
 			String url = HttpUtil.Server + 
 					"/read.php?"
 					+"&page="+page
-					+"&lite=js&noprefix";
+					+"&lite=js&noprefix&v2";
 			if(tid !=0)
 				url = url + "&tid="+ tid;
 			if(pid !=0){

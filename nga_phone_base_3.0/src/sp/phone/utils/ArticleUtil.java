@@ -284,12 +284,14 @@ public class ArticleUtil {
 		
 		if(o1 == null)
 			return null;
+		JSONObject userInfoMap = (JSONObject) o.get("__U");
 		
-		List<ThreadRowInfo> __R =  convertJSobjToList(o1,rows);
+		List<ThreadRowInfo> __R =  convertJSobjToList(o1,rows,userInfoMap);
 		data.setRowList(__R);
 		data.setRowNum(__R.size());
 
 		o1 =  (JSONObject) o.get("__F");
+		
 		
 
 		
@@ -299,7 +301,7 @@ public class ArticleUtil {
 
 	
 	private List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap,
-			int count) {
+			int count,JSONObject userInfoMap) {
 		List<ThreadRowInfo> __R = new ArrayList<ThreadRowInfo>();
 
 		if (rowMap == null)
@@ -316,9 +318,10 @@ public class ArticleUtil {
 
 				if (commObj != null) {
 
-					row.setComments(convertJSobjToList(commObj));
+					row.setComments(convertJSobjToList(commObj,userInfoMap));
 				}
 				
+				fillUserInfo(row,userInfoMap);
 				
 				fillFormated_html_data(row,i);
 				
@@ -330,9 +333,29 @@ public class ArticleUtil {
 		return __R;
 	}
 	
-	private List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap){
+	private void fillUserInfo(ThreadRowInfo row, JSONObject userInfoMap) {
+		if(row.getAuthorid() ==0 ){
+			return;
+		}
+		JSONObject userInfo = (JSONObject) userInfoMap.get(String.valueOf(row.getAuthorid()));
+		if(userInfo == null){
+			return;
+		}
+		row.setAuthor(userInfo.getString("username"));
+		row.setJs_escap_avatar(userInfo.getString("avatar"));
+		row.setYz(userInfo.getString("yz"));
+		row.setMute_time(userInfo.getString("mute_time"));
+		try{
+			row.setAurvrc(Integer.valueOf(userInfo.getString("rvrc")));
+		}catch(Exception e){
+			row.setAurvrc(0);
+		}
+		row.setSignature(userInfo.getString("signature"));
+	}
+
+	private List<ThreadRowInfo> convertJSobjToList(JSONObject rowMap,JSONObject userInfoMap){
 		
-		return convertJSobjToList(rowMap,rowMap.size());
+		return convertJSobjToList(rowMap,rowMap.size(),userInfoMap);
 	}
 
 	private void fillFormated_html_data(ThreadRowInfo row,int i){
