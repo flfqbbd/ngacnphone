@@ -20,7 +20,7 @@ public class BookmarkTask extends AsyncTask<String, Integer, String> {
 	//String url = "http://bbs.ngacn.cc/nuke.php?func=topicfavor&action=del";
 	//post tidarray:3092111
 	private Context context;
-	private final String url = "http://bbs.ngacn.cc/nuke.php";
+	private final String url = "http://bbs.ngacn.cc/nuke.php?__lib=topic_favor&__act=topic_favor&action=add&tid=";
 	
 	
 	
@@ -34,10 +34,10 @@ public class BookmarkTask extends AsyncTask<String, Integer, String> {
 
 		
 		String tid = params[0];
-		HttpPostClient c =  new HttpPostClient(url);
+		HttpPostClient c =  new HttpPostClient(url+tid);
 		String cookie = PhoneConfiguration.getInstance().getCookie();
 		c.setCookie(cookie);
-		String body ="func=topicfavor&action=add&raw=1&tid="+tid;
+		String body ="__lib=topic_favor&__act=topic_favor&action=add&tid="+tid;
 
 		String ret = null;
 		try {
@@ -69,10 +69,8 @@ public class BookmarkTask extends AsyncTask<String, Integer, String> {
 		ActivityUtil.getInstance().dismiss();
 		if(StringUtil.isEmpty(result))
 			return;
-		String msg = context.getResources().getString(R.string.book_mark_successfully);
-		if(result.indexOf("document.createElement('iframe')") < 0){
-			 msg = context.getResources().getString(R.string.already_bookmarked);
-		}
+		
+		String msg = StringUtil.getStringBetween(result, 0, "{\"0\":\"", "\"}}").result;
 		//android.R.drawable.ic_search_category_default
 		if(!StringUtil.isEmpty(msg)){
 			Toast.makeText(context, msg.trim(), Toast.LENGTH_SHORT).show();
