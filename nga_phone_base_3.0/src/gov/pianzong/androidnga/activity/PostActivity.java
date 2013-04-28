@@ -347,7 +347,7 @@ public class PostActivity extends ActionBarActivity
 	private String buildSig()
 	{
 		StringBuilder sb  = new StringBuilder();
-		sb.append("\n[url=https://play.google.com/store/apps/details?id=gov.pianzong.androidnga");
+		/*sb.append("\n[url=https://play.google.com/store/apps/details?fuck&id=gov.pianzong.androidnga");
 		PhoneConfiguration config = PhoneConfiguration.getInstance();
 		if(config.location != null && config.uploadLocation)
 		{
@@ -362,12 +362,12 @@ public class PostActivity extends ActionBarActivity
 				e.printStackTrace();
 			}
 			sb.append("ffff");
-		} 
-		sb.append("]----sent from my ")
+		} */
+		sb.append("\n\n[color=blue]----sent from my ")
 		.append(android.os.Build.MANUFACTURER).append(" ")
 		.append(android.os.Build.MODEL).append(",Android ")
 		.append(android.os.Build.VERSION.RELEASE)
-		.append("[/url]\n");
+		.append("[/color]\n");
 
 		
 		return sb.toString();
