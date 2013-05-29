@@ -56,7 +56,7 @@ public class JsonTopicListLoadTask extends AsyncTask<String, Integer, TopicListI
 			return null;
 		}
 		
-		TopicListInfo ret = new TopicListInfo();;
+		TopicListInfo ret = new TopicListInfo();
 		
 		Object rows = o.get("__ROWS");
 		if(rows instanceof Integer)
@@ -98,7 +98,7 @@ public class JsonTopicListLoadTask extends AsyncTask<String, Integer, TopicListI
 		
 		JSONObject o1 = (JSONObject) o.get("__T");
 		
-		if(ret == null || o1 == null)
+		if( o1 == null)
 		{
 			error = "ÇëÖØÐÂµÇÂ¼";
 			return null;
@@ -114,12 +114,12 @@ public class JsonTopicListLoadTask extends AsyncTask<String, Integer, TopicListI
                         (StringUtil.isEmpty(entry.getTop_level()) && StringUtil.isEmpty(entry.getStatic_topic())) )
 			    articleEntryList.add(entry);
 			}catch(Exception e){
-				ThreadPageInfo entry = new ThreadPageInfo();
+				/*ThreadPageInfo entry = new ThreadPageInfo();
 				String error = rowObj.getString("error");
 				entry.setSubject(error);
 				entry.setAuthor("");
 				entry.setLastposter("");
-				articleEntryList.add(entry);
+				articleEntryList.add(entry);*/
 			}
 		}
         ret.set__T__ROWS(articleEntryList.size());
