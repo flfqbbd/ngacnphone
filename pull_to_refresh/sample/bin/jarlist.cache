@@ -1,0 +1,5 @@
+# cache for current jar dependecy. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1359750706000 349252 612846c9857077a039b533718f72db3bc041d389 E:\develop\workspace\Android-PullToRefresh-master\sample\libs\android-support-v4.jar
+1359750706000 349252 612846c9857077a039b533718f72db3bc041d389 E:\develop\workspace\Android-PullToRefresh-master\extras\PullToRefreshViewPager\libs\android-support-v4.jar
