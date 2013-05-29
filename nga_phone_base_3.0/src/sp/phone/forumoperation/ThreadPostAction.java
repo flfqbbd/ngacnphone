@@ -103,7 +103,7 @@ public class ThreadPostAction {
 					sb.append("&mention="); sb.append( URLEncoder.encode(mention_,"GBK"));
 					
 				}else{
-					sb.append("&mention="); sb.append( URLEncoder.encode("Èý¶jµ¾","GBK"));
+					sb.append("&mention="); sb.append( URLEncoder.encode("","GBK"));
 				}
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();

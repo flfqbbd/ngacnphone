@@ -42,6 +42,7 @@ public class SettingsActivity extends FragmentActivity implements
 	private CompoundButton notification;
 	private CompoundButton notificationSound;
 	private CompoundButton uploadLocation;
+    private CompoundButton showStatic;
 
 	private CompoundButton split = null;
 	private CompoundButton ha = null;
@@ -126,6 +127,10 @@ public class SettingsActivity extends FragmentActivity implements
 		uploadLocation.setChecked(config.uploadLocation);
 		uploadLocation.setOnCheckedChangeListener(new UploadLocationListener());
 
+        showStatic = (CompoundButton) findViewById(R.id.checkBox_show_static);
+        showStatic.setChecked(config.showStatic);
+        showStatic.setOnCheckedChangeListener(new ShowStaticListener());
+
 		split = (CompoundButton) findViewById(R.id.checkBox_split);
 		if (split != null) {
 			boolean checked = true;
@@ -165,7 +170,7 @@ public class SettingsActivity extends FragmentActivity implements
 		progress = 100 * webSize / defaultWebSize;
 		webSizebar.setProgress(progress);
 		websizeView.getSettings().setDefaultFontSize(webSize);
-		websizeView.loadDataWithBaseURL(null, "帖子内字体大小", "text/html", "utf-8",
+		websizeView.loadDataWithBaseURL(null, getString(R.string.websize_sample_text), "text/html", "utf-8",
 				"");
 		webSizebar.setOnSeekBarChangeListener(new WebSizeListener());
 
@@ -196,6 +201,7 @@ public class SettingsActivity extends FragmentActivity implements
 		notification.setTextColor(fgColor);
 		notificationSound.setTextColor(fgColor);
 		uploadLocation.setTextColor(fgColor);
+        showStatic.setTextColor(fgColor);
 		if (split != null)
 			split.setTextColor(fgColor);
 		if (ha != null)
@@ -288,9 +294,9 @@ public class SettingsActivity extends FragmentActivity implements
 			editor.commit();
 
 			if (isChecked) {
-				new AlertDialog.Builder(SettingsActivity.this).setTitle("提示")
+				new AlertDialog.Builder(SettingsActivity.this).setTitle(R.string.prompt)
 						.setMessage(R.string.view_cache_tips)
-						.setPositiveButton("知道了", null).show();
+						.setPositiveButton(R.string.i_know, null).show();
 			}
 
 		}
@@ -367,6 +373,24 @@ public class SettingsActivity extends FragmentActivity implements
 		}
 
 	}
+
+    class ShowStaticListener implements OnCheckedChangeListener,
+            PerferenceConstant {
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView,
+                                     boolean isChecked) {
+            PhoneConfiguration.getInstance().showStatic = isChecked;
+            SharedPreferences share = getSharedPreferences(PERFERENCE,
+                    MODE_PRIVATE);
+
+            Editor editor = share.edit();
+            editor.putBoolean(SHOW_STATIC, isChecked);
+            editor.commit();
+
+        }
+
+    }
 
 	class DownImgNoWifiChangedListener implements OnCheckedChangeListener,
 			PerferenceConstant {

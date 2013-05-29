@@ -47,11 +47,7 @@ implements PerferenceConstant{
 		
 
 			result =HttpUtil.getHtml(url, cookie, null, 3000);
-			//result = "{0:[{0:8,1:553736,2:\"吸片\",3:\"\",4:\"\",5:\"又一个客户端杀手贴\",9:1338737284,6:5222738,7:90295509},{0:8,1:553736,2:\"吸片\",3:\"\",4:\"\",5:\"又一个客户端杀手贴\",9:1338737301,6:5222738,7:90295522}]}";
-			//result = "window.script_muti_get_var_store={0:[{0:2,1:425082,2:\"tql1\",3:553736,4:\"吸片\",5:\"中南海的头头脑脑们和帝都屁民一样吸着PM2.5 破1000的空气。。。。真是惨剧\",9:1358445363,8:104027885,6:5920698,7:104028185},{0:7,1:244052,2:\"猫小小\",3:553736,4:\"UID:553736\",5:\"片总救命啊\",9:1358459241,6:5920813,7:\"\"},{0:7,1:244052,2:\"猫小小\",3:553736,4:\"UID:553736\",5:\"片总救命啊\",9:1358459315,6:5920813,7:\"\"}]}";
-			
-			//window.script_muti_get_var_store={0:[{0:2,1:7943930,2:"thank243",3:553736,4:"吸片",5:"四儿子和i9300选哪个呀？",9:1362490539,8:106720464,6:6033139,7:106720680,10:1}]}
-			
+
 			PhoneConfiguration.getInstance().lastMessageCheck
 				= System.currentTimeMillis();
 			Log.i(this.getClass().getSimpleName(), "get message:"+result);
@@ -60,28 +56,7 @@ implements PerferenceConstant{
 
 	@Override
 	protected void onPostExecute(String result) {
-		/*@sample
-		 * window.script_muti_get_var_store={0:[
-		 * {0:8,1:1831521,2:"片总",3:"",4:"",5:"NGA安卓客户端越来越
-			完善了！点击LZ下面小尾巴下载最新版！付建议！",
-			9:1329908664,6:4942187,7:84606246},
-			{0:8,1:1831521,2:"片总",3:"",4:"",
-			5:"NGA安卓客户端越来越完善了！点击LZ下面小尾巴下载最新版！付
-			建议！",
-			9:1329908695,6:4942187,7:84606274}]}
-		 * 
-		 */
-		
-		//result = "{0:[{0:8,1:1831521,2:\"片总\",3:\"\",4:\"\",5:\"NGA安卓客户端越来越完善了！点击LZ下面小尾巴下载最新版！付建议！\",9:1329908664,6:4942187,7:84606246},{0:8,1:1831521,2:\"片总\",3:\"\",4:\"\",5:\"NGA安卓客户端越来越完善了！点击LZ下面小尾巴下载最新版！付建议！\",9:1329908695,6:4942187,7:84606274}]}";
-		
-	/*
-		try {
-			JSONObject o = new JSONObject(result);
-			JSONArray array = o.getJSONArray("0");
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+
 
 		if(StringUtil.isEmpty(result)){
 			return;
@@ -229,8 +204,8 @@ implements PerferenceConstant{
 			 notification.defaults |=Notification.DEFAULT_SOUND;
 		 notification.flags = Notification.FLAG_AUTO_CANCEL;
 		 
-	     notification.tickerText = "有" + notificationList.size()
-	    		 +"个人喷你了";
+	     notification.tickerText = "锟斤拷" + notificationList.size()
+	    		 +"锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷";
 	     notification.when = System.currentTimeMillis();
 	     
 	     notification.number = notificationList.size();
@@ -280,7 +255,7 @@ implements PerferenceConstant{
 		PendingIntent pending=
 				PendingIntent.getActivity(context, 0, intent, 0); 
 		
-		 String tickerText = nickName + " 刚才喷你了";
+		 String tickerText = nickName + " 锟秸诧拷锟斤拷锟斤拷锟斤拷";
 
 
 		 Notification notification = new Notification(); 

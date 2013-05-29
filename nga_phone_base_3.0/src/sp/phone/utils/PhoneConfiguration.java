@@ -36,6 +36,7 @@ public class PhoneConfiguration implements PerferenceConstant{
 	public boolean useViewCache;
 	public Location location = null;
 	public boolean uploadLocation = false;
+    public boolean showStatic = false;
 	private int uiFlag = 0;
 
 

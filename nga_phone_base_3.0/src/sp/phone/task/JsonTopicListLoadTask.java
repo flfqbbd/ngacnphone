@@ -17,6 +17,7 @@ import sp.phone.utils.PhoneConfiguration;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import sp.phone.utils.StringUtil;
 
 public class JsonTopicListLoadTask extends AsyncTask<String, Integer, TopicListInfo> {
 	private final static String TAG = JsonTopicListLoadTask.class.getSimpleName();
@@ -109,7 +110,9 @@ public class JsonTopicListLoadTask extends AsyncTask<String, Integer, TopicListI
 			JSONObject rowObj  = (JSONObject) o1.get(String.valueOf(i));
 			try{
 			ThreadPageInfo entry = JSONObject.toJavaObject(rowObj,ThreadPageInfo.class);
-			articleEntryList.add(entry);
+            if(PhoneConfiguration.getInstance().showStatic ||
+                        (StringUtil.isEmpty(entry.getTop_level()) && StringUtil.isEmpty(entry.getStatic_topic())) )
+			    articleEntryList.add(entry);
 			}catch(Exception e){
 				ThreadPageInfo entry = new ThreadPageInfo();
 				String error = rowObj.getString("error");
@@ -119,7 +122,7 @@ public class JsonTopicListLoadTask extends AsyncTask<String, Integer, TopicListI
 				articleEntryList.add(entry);
 			}
 		}
-		
+        ret.set__T__ROWS(articleEntryList.size());
 		ret.setArticleEntryList(articleEntryList);
 		
 		return ret;

@@ -55,27 +55,45 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 	private final SparseArray<SoftReference <View>> viewCache;
 	private final Object lock = new Object();
 	private final HashSet<String> urlSet = new HashSet<String>();
-	
-	
+	static String userDistance = null;
+    static String meter = null;
+    static String kiloMeter = null;
+    static String hide = null;
+    static String legend = null;
+    static String attachment = null;
+    static String comment = null;
+	static String sig = null;
 	
 	public ArticleListAdapter(Context activity) {
 		super();
 		this.activity = activity;
 		this.viewCache = new SparseArray<SoftReference <View>>();
 		client = new ArticleListWebClient((FragmentActivity) activity);
+        if(userDistance == null)
+            initStaticStrings(activity);
 	}
 
 
 
-	@Override
+
+    @Override
 	public int getCount() {
 		if(null == data)
 			return 0;
 		return data.getRowNum();
 	}
 
-	
-	
+
+    private void initStaticStrings(Context activity) {
+        userDistance = activity.getString(R.string.user_distance);
+        meter = activity.getString(R.string.meter);
+        kiloMeter = activity.getString(R.string.kilo_meter);
+        hide = activity.getString(R.string.hide);
+        legend = activity.getString(R.string.legend);
+        attachment = activity.getString(R.string.attachment);
+        comment = activity.getString(R.string.comment);
+        sig = activity.getString(R.string.sig);
+    }
 	public void setData(ThreadData data) {
 		this.data = data;
 	}
@@ -196,15 +214,15 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		sb.append("<a href=\"https://maps.google.com.hk/?ie=UTF8&hl=zh-cn&q=")
 		.append(loc).append("(")
 		.append(encodedName)
-		.append(")\"").append(" >该用户距离你")
+		.append(")\"").append(" >").append(userDistance)
 		.append(distanceString(distance))
 		.append("</a></br>");
 		return sb.toString();
 	}
 	public static String distanceString(long distance){
-		String ret = Long.valueOf(distance).toString() + "米";
+		String ret = Long.valueOf(distance).toString() + meter;
 		if(distance >1000){
-			ret = Long.valueOf(distance/1000).toString() + "公里";
+			ret = Long.valueOf(distance/1000).toString() + kiloMeter;
 		}
 		return ret;
 	}
@@ -216,7 +234,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		}
 		if(StringUtil.isEmpty(ngaHtml)){
 			
-			ngaHtml= "<font color='red'>[隐藏]</font>";
+			ngaHtml= "<font color='red'>["+ hide + "]</font>";
 		}
 		ngaHtml = ngaHtml + buildComment(row,fgColorStr) + buildAttachment(row,showImage)
 				+ buildSignature(row,showImage);
@@ -289,9 +307,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 	private void handleAvatar(ImageView avatarIV, ThreadRowInfo row) {
 
 		final int lou = row.getLou();
-		//final String floor = String.valueOf(lou);
-		//avatarIV.setTag(floor);// 设置 tag 为楼层
-		final String avatarUrl = parseAvatarUrl(row.getJs_escap_avatar());// 头像
+		final String avatarUrl = parseAvatarUrl(row.getJs_escap_avatar());//
 		final String userId = String.valueOf(row.getAuthorid());
 		if(PhoneConfiguration.getInstance().nikeWidth < 3){
 			avatarIV.setImageBitmap(null);
@@ -428,7 +444,6 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		//colorId = theme.getBackgroundColor(2);
 		
 		if(row == null){
-			//holder.titleTV.setText("错误楼层");
 			return view;
 		}
 
@@ -437,7 +452,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		
 
 		
-		// 其他处理
+
 		int fgColorId = ThemeManager.getInstance().getForegroundColor();
 		int fgColor = parent.getContext().getResources().getColor(fgColorId);
 		
@@ -465,15 +480,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		postTimeTV.setText(row.getPostdate());
 		postTimeTV.setTextColor(fgColor);
 
-		/*
-		holder.levelTV.setText("级别:"+row.getLevel());
-		holder.levelTV.setTextColor(fgColor);
-		
-		holder.aurvrcTV.setText("威望:"+row.getAurvrc());
-		holder.aurvrcTV.setTextColor(fgColor);
-		
-		holder.postnumTV.setText("发帖:"+row.getPostnum());
-		holder.postnumTV.setTextColor(fgColor);*/
+
 
 		return view;
 	}
@@ -490,7 +497,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		else if( !StringUtil.isEmpty(row.getMute_time()) &&  ! "0".equals(row.getMute_time()))
 		{
 			fgColor = nickNameTV.getResources().getColor(R.color.title_orange);
-			nickName += "(传说)";
+			nickName += "(" +legend+")";
 		}
 		nickNameTV.setText(nickName);
 		TextPaint tp = nickNameTV.getPaint();
@@ -504,7 +511,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 			return "";
 		}
 		StringBuilder  ret = new StringBuilder();
-		ret.append("<br/><br/>附件<hr/><br/>");
+		ret.append("<br/><br/>").append(attachment).append("<hr/><br/>");
 		//ret.append("<table style='background:#e1c8a7;border:1px solid #b9986e;margin:0px 0px 10px 30px;padding:10px;color:#6b2d25;max-width:100%;'>");
 		ret.append("<table style='background:#e1c8a7;border:1px solid #b9986e;padding:10px;color:#6b2d25;font-size:2'>");
 		ret.append("<tbody>");
@@ -562,7 +569,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 		}
 		
 		StringBuilder  ret = new StringBuilder();
-		ret.append("<br/></br>评论<hr/><br/>");
+		ret.append("<br/></br>").append(comment).append("<hr/><br/>");
 		ret.append("<table  border='1px' cellspacing='0px' style='border-collapse:collapse;");
 		ret.append("color:");
 		ret.append(fgColor);
@@ -597,7 +604,7 @@ public class ArticleListAdapter extends BaseAdapter implements OnLongClickListen
 				|| !PhoneConfiguration.getInstance().showSignature){
 			return "";
 		}
-		return "<br/></br>签名<hr/><br/>"
+		return "<br/></br>"+sig+"<hr/><br/>"
 				+StringUtil.decodeForumTag(row.getSignature(),showImage);
 	}
 

@@ -3,13 +3,13 @@ package sp.phone.bean;
 public class Article {
 
 //	private int id;
-	private String title;// 标题
-	private String content;// 内容
-	private int floor;// 楼层
-	private String lastTime;// 最后一次修改时间
-	private String url;// 帖子的地址
-//	private int isTopic;// 是否是主题帖
-	private User user;// 发帖人
+	private String title;//
+	private String content;//
+	private int floor;//
+	private String lastTime;//
+	private String url;//
+//	private int isTopic;//
+	private User user;//
 
 //	public int getId() {
 //		return id;

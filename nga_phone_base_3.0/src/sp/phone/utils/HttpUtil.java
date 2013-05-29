@@ -69,7 +69,7 @@ public class HttpUtil {
 				if (result == HttpURLConnection.HTTP_OK) {
 					System.out.println(re);
 					System.out.println(host + "ok !");
-					HOST = host;// 设置服务器
+					HOST = host;//
 					break;
 				} else {
 					System.out.println(host + "fail !");
@@ -107,7 +107,7 @@ public class HttpUtil {
 				int result = conn.getResponseCode();
 				if (result == HttpURLConnection.HTTP_OK) {
 					System.out.println(host + "ok !");
-					HOST = str;// 设置服务器
+					HOST = str;//
 					HOST_PORT = host;
 					status = true;
 					break;

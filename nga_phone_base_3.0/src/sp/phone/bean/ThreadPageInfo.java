@@ -32,6 +32,9 @@ public class ThreadPageInfo {
     private int pid;
    // private String adminbox;
     private String content;
+    private String top_level;
+    private String static_topic;
+
 	public int getFid() {
 		return fid;
 	}
@@ -98,8 +101,21 @@ public class ThreadPageInfo {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	
-	
 
+
+    public String getStatic_topic() {
+        return static_topic;
+    }
+
+    public void setStatic_topic(String static_topic) {
+        this.static_topic = static_topic;
+    }
+
+    public String getTop_level() {
+        return top_level;
+    }
+
+    public void setTop_level(String top_level) {
+        this.top_level = top_level;
+    }
 }

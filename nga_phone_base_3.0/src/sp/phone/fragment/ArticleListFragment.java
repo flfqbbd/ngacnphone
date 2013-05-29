@@ -291,7 +291,7 @@ public class ArticleListFragment extends Fragment
 			position = info.position;
 		}
 		if(position <0 || position >= listview.getAdapter().getCount()){
-			Toast.makeText(getActivity(), "无法确定楼层，选择0楼", 
+			Toast.makeText(getActivity(), R.string.floor_error,
 					Toast.LENGTH_LONG	).show();
 			position = 0;
 		}
@@ -301,7 +301,7 @@ public class ArticleListFragment extends Fragment
 		
 		ThreadRowInfo row = (ThreadRowInfo) listview.getItemAtPosition(position);
 		if(row == null){
-			Toast.makeText(getActivity(), "客户端发生未知错误", Toast.LENGTH_LONG	).show();
+			Toast.makeText(getActivity(), R.string.unknow_error, Toast.LENGTH_LONG	).show();
 			return true;
 		}
 		String content = row.getContent();
@@ -389,7 +389,7 @@ public class ArticleListFragment extends Fragment
 				//cbm.setPrimaryClip(ClipData.newPlainText("content", content));
 			//}
 
-			Toast.makeText(getActivity(), "已经复制到剪切板", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity(), R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.show_this_person_only:
 			Intent intentThis = new Intent();

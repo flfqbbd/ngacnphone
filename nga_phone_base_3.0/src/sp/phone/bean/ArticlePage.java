@@ -6,10 +6,10 @@ import java.util.List;
 
 public class ArticlePage {
 
-	private List<Article> listArticle; // 回帖列表
+	private List<Article> listArticle; //
 	private HashMap<String, String> now;
 
-	private ArrayList<HashMap<String, String>> list;// 列表
+	private ArrayList<HashMap<String, String>> list;//
 
 	private HashMap<String, String> page;// pre next first last current num
 

@@ -89,7 +89,7 @@ public class BookmarkActivity extends Activity
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		
-		menu.add(0,0,0,"É¾³ý");
+		menu.add(0,0,0,getString(R.string.delete));
 		super.onCreateContextMenu(menu, v, menuInfo);
 	}
 	@Override

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 
+import gov.pianzong.androidnga.R;
 import org.apache.commons.io.IOUtils;
 
 import sp.phone.forumoperation.HttpPostClient;
@@ -48,7 +49,7 @@ public class ReportTask extends AsyncTask<String, Integer, String> {
 			if(input != null)
 			{
 				String html = IOUtils.toString(input, "gbk");
-				if(html.contains("操作成功"))
+				if(html.contains(context.getString(R.string.report_success)))
 					return "ok";
 
 			}
@@ -75,7 +76,7 @@ public class ReportTask extends AsyncTask<String, Integer, String> {
 	protected void onPostExecute(String result) {
 		if(!StringUtil.isEmpty(result))
 		{
-			Toast.makeText(context, "操作成功", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context,R.string.report_success, Toast.LENGTH_SHORT).show();
 		}
 	}
 	

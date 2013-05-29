@@ -74,9 +74,9 @@ public class ImageUtil {
 	/**
 	 * 
 	 * @param drawable
-	 *            原 Drawable
+	 *            source Drawable
 	 * @param bookWidth
-	 *            预定 宽度
+	 *          
 	 * @return
 	 */
 	public static Bitmap zoomImageByWidth(Drawable drawable, int bookWidth) {
@@ -111,7 +111,7 @@ public class ImageUtil {
 	}
 
 	/**
-	 * Drawable转化为 Bitmap
+	 * convert Drawable to Bitmap
 	 * 
 	 * @param drawable
 	 * @return
@@ -129,12 +129,12 @@ public class ImageUtil {
 	}
 
 	/**
-	 * 根据 source 提取 为 Drawable
+	 * source to Drawable
 	 * 
 	 * @param activity
-	 *            活动
+	 *           
 	 * @param source
-	 *            源
+	 *            
 	 * @return
 	 */
 	/*public static Drawable reSetDrawable(Activity activity, String source) {
@@ -205,7 +205,7 @@ public class ImageUtil {
 		} else if (source.equals("[s:43]")) {
 			drawable = activity.getResources().getDrawable(R.drawable.a23);
 		} else {
-			// 默认图片
+			//
 			drawable = activity.getResources().getDrawable(R.drawable.question);
 		}
 		drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable

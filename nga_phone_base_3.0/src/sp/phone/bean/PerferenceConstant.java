@@ -21,6 +21,7 @@ public interface PerferenceConstant {
 	final String RECENT_BOARD = "recentBoard";
 	final String SHOW_ANIMATION = "showAnimation";
 	final String SHOW_SIGNATURE = "showSignature";
+    final String SHOW_STATIC = "showStatic";
 	final String USE_VIEW_CACHE = "useViewCache";
 	final String USER_LIST = "userList";
 	final String UPLOAD_LOCATION = "uploadLocation";

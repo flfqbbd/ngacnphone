@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/library-68a629a1b5b00abd114ce72b0c363e8d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/commons-io-2.4-74d642a8ea184b37864dad4b1af63565.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v13-79df489a0a08fef98ec5dbd21c5e6d3d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/pulltorefreshviewpager-a47f182680ae8315de9c71ff5f2ee733.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/fastjson-1.1.19-94a44818aee6e7ecc44bf62783115044.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

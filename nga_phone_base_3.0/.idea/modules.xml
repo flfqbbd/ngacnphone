@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Android-PullToRefresh-master/extras/PullToRefreshViewPager/extra-viewpager.iml" filepath="$PROJECT_DIR$/../Android-PullToRefresh-master/extras/PullToRefreshViewPager/extra-viewpager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Android-PullToRefresh-master/library/library.iml" filepath="$PROJECT_DIR$/../Android-PullToRefresh-master/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nga_phone.iml" filepath="$PROJECT_DIR$/nga_phone.iml" />
+    </modules>
+  </component>
+</project>
+

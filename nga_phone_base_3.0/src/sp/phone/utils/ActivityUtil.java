@@ -75,11 +75,11 @@ public class ActivityUtil {
 	
 	public static void reflushLocation(Context context){
 		Criteria criteria = new Criteria(); 
-	    criteria.setAccuracy(Criteria.ACCURACY_LOW); // 设置精度
-	    criteria.setAltitudeRequired(false); // 设置是否需要提供海拔信息
-	    criteria.setBearingRequired(false); // 是否需要方向信息
-	    criteria.setCostAllowed(false); // 设置找到的 Provider 是否允许产生费用
-	    criteria.setPowerRequirement(Criteria.POWER_LOW); // 设置耗电
+	    criteria.setAccuracy(Criteria.ACCURACY_LOW); 
+	    criteria.setAltitudeRequired(false); 
+	    criteria.setBearingRequired(false); 
+	    criteria.setCostAllowed(false); 
+	    criteria.setPowerRequirement(Criteria.POWER_LOW); 
 	    
 	    final LocationManager locationManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE); 
 	    String provider=locationManager.getBestProvider(criteria, true); 
@@ -122,7 +122,7 @@ public class ActivityUtil {
     	}
     	PhoneConfiguration.getInstance().location = location;
 	}
-	private static final  double EARTH_RADIUS = 6378.137;//地球半径
+	private static final  double EARTH_RADIUS = 6378.137;
 	private static double rad(double d)
 	{
 	   return d * Math.PI / 180.0;
@@ -176,7 +176,7 @@ public class ActivityUtil {
 	
 	public void noticeError(String error,Context context){
 		HttpUtil.switchServer();
-		notice("错误", error,context);
+		notice(context.getString(R.string.error), error,context);
 	}
 
 	private void notice(String title, String content,Context c) {

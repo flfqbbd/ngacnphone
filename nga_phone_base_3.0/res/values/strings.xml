@@ -91,5 +91,31 @@
     <string name="report_confirm">举报确认</string>
     <string name="emotion">表情</string>
     <string name="cannot_eidt_comment">不能编辑贴条</string>
-    
+    <string name="websize_sample_text">帖子内字体大小</string>
+    <string name="prompt">提示</string>
+    <string name="i_know">知道了</string>
+    <string name="start_title">源于一个简单的想法</string>
+    <string name="create_cache_dir">创建缓存目录</string>
+    <string name="move_avatar">移动头像到新位置</string>
+    <string name="error">错误</string>
+    <string name="recent">最近访问</string>
+    <string name="floor_error">无法确定楼层，选择0楼</string>
+    <string name="unknow_error">客户端发生未知错误</string>
+    <string name="copied_to_clipboard">已经复制到剪切板</string>
+    <string name="search_dialog_hint">强撸灰飞烟灭</string>
+    <string name="user_distance">该用户距离你</string>
+    <string name="meter">米</string>
+    <string name="kilo_meter">公里</string>
+    <string name="hide">隐藏</string>
+    <string name="legend">传说</string>
+    <string name="attachment">附件</string>
+    <string name="comment">评论</string>
+    <string name="sig">签名</string>
+    <string name="delete">删除</string>
+    <string name="crash_notice">崩溃啦</string>
+    <string name="report_success">操作成功</string>
+    <string name="please_relogin">请重新登录</string>
+    <string name="show_static">显示版主固定的帖子</string>
+
+
 </resources>
