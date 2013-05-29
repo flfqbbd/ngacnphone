@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="gov.pianzong.androidnga" android:versionCode="490"
-	android:versionName="1.4.90" android:installLocation="auto">
+	package="gov.pianzong.androidnga" android:versionCode="495"
+	android:versionName="1.4.95" android:installLocation="auto">
 	
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -21,11 +21,11 @@
 		</activity>
 		<activity android:name=".activity.LoginActivity" android:theme="@style/AppTheme"/>
 
-		<activity android:name=".activity.PostActivity" android:theme="@style/AppTheme"/>
-		    
+		<activity android:windowSoftInputMode="adjustResize" android:name=".activity.PostActivity" android:theme="@style/AppTheme"/>
 
-		<activity android:name=".activity.SettingsActivity"></activity>
-		<activity android:name=".activity.BookmarkActivity"></activity>
+
+		<activity android:name=".activity.SettingsActivity"/>
+		<activity android:name=".activity.BookmarkActivity"/>
 		<activity android:name=".activity.FlexibleTopicListActivity" android:exported="true" android:theme="@style/AppTheme">
 		   
 		    <intent-filter>
@@ -74,16 +74,16 @@
             </intent-filter>
 		    
 		</activity>
-		<activity android:name=".activity.ImageViewerActivity" android:theme="@style/AppTheme"></activity>
-		<activity android:name=".activity.NearbyUserActivity" android:theme="@style/AppTheme"></activity>
-		<activity android:theme="@style/AppTheme" android:name=".activity.FragmentArticleListActivity"></activity>
-		<activity android:name=".activity.ReplyListActivity" android:theme="@style/AppTheme"></activity>
-		<activity android:name=".activity.SplitFlexibleTopicListActivity" android:theme="@style/AppTheme" android:uiOptions="splitActionBarWhenNarrow"></activity>
-		<activity android:hardwareAccelerated="true" android:name=".activity.HaFlexibleTopicListActivity"></activity>
-		<activity android:hardwareAccelerated="true" android:uiOptions="splitActionBarWhenNarrow" android:name=".activity.HaSplitFlexibleTopicListActivity"></activity>
-		<activity android:uiOptions="splitActionBarWhenNarrow" android:name=".activity.SplitArticleListActivity"></activity>
-		<activity android:hardwareAccelerated="true" android:name=".activity.HaArticleListActivity"></activity>
-		<activity android:hardwareAccelerated="true" android:uiOptions="splitActionBarWhenNarrow" android:name=".activity.HaSplitArticleListActivity"></activity>
+		<activity android:name=".activity.ImageViewerActivity" android:theme="@style/AppTheme"/>
+		<activity android:name=".activity.NearbyUserActivity" android:theme="@style/AppTheme"/>
+		<activity android:theme="@style/AppTheme" android:name=".activity.FragmentArticleListActivity"/>
+		<activity android:name=".activity.ReplyListActivity" android:theme="@style/AppTheme"/>
+		<activity android:name=".activity.SplitFlexibleTopicListActivity" android:theme="@style/AppTheme" android:uiOptions="splitActionBarWhenNarrow"/>
+		<activity android:hardwareAccelerated="true" android:name=".activity.HaFlexibleTopicListActivity"/>
+		<activity android:hardwareAccelerated="true" android:uiOptions="splitActionBarWhenNarrow" android:name=".activity.HaSplitFlexibleTopicListActivity"/>
+		<activity android:uiOptions="splitActionBarWhenNarrow" android:name=".activity.SplitArticleListActivity"/>
+		<activity android:hardwareAccelerated="true" android:name=".activity.HaArticleListActivity"/>
+		<activity android:hardwareAccelerated="true" android:uiOptions="splitActionBarWhenNarrow" android:name=".activity.HaSplitArticleListActivity"/>
 	</application>
 
 </manifest> 
