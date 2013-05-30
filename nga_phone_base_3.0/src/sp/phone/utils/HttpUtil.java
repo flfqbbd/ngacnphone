@@ -57,7 +57,7 @@ public class HttpUtil {
 	public static String HOST_PORT = "";
 	//public static String USER_AGENT = 
 	//		"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.30 Safari/536.5";
-	public static final String USER_AGENT = "AndroidNga/" + MyApp.version;
+	public static final String USER_AGENT = new StringBuilder().append("AndroidNga/").append(MyApp.version).append("(Android ").append(android.os.Build.VERSION.RELEASE).append(") ").append(android.os.Build.MANUFACTURER).append(" ").append(android.os.Build.MODEL).toString();
 	public static void selectServer2() {
 		for (String host : host_arr) {
 			HttpURLConnection conn = null;
