@@ -204,8 +204,7 @@ implements PerferenceConstant{
 			 notification.defaults |=Notification.DEFAULT_SOUND;
 		 notification.flags = Notification.FLAG_AUTO_CANCEL;
 		 
-	     notification.tickerText = "��" + notificationList.size()
-	    		 +"����������";
+	     notification.tickerText = String.format(context.getString(R.string.multi_reply_format), notificationList.size());
 	     notification.when = System.currentTimeMillis();
 	     
 	     notification.number = notificationList.size();
@@ -255,7 +254,7 @@ implements PerferenceConstant{
 		PendingIntent pending=
 				PendingIntent.getActivity(context, 0, intent, 0); 
 		
-		 String tickerText = nickName + " �ղ�������";
+		 String tickerText = nickName + context.getString(R.string.reply_to_you);
 
 
 		 Notification notification = new Notification(); 

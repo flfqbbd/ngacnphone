@@ -1,29 +1,5 @@
 package gov.pianzong.androidnga.activity;
 
-import gov.pianzong.androidnga.R;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-
-import org.apache.commons.io.IOUtils;
-
-import sp.phone.adapter.SpinnerUserListAdapter;
-import sp.phone.bean.User;
-import sp.phone.forumoperation.HttpPostClient;
-import sp.phone.forumoperation.ThreadPostAction;
-import sp.phone.fragment.EmotionCategorySelectFragment;
-import sp.phone.fragment.EmotionDialogFragment;
-import sp.phone.fragment.ExtensionEmotionFragment;
-import sp.phone.interfaces.EmotionCategorySelectedListener;
-import sp.phone.interfaces.OnEmotionPickedListener;
-import sp.phone.task.FileUploadTask;
-import sp.phone.utils.ActivityUtil;
-import sp.phone.utils.Des;
-import sp.phone.utils.PhoneConfiguration;
-import sp.phone.utils.ReflectionUtil;
-import sp.phone.utils.StringUtil;
-import sp.phone.utils.ThemeManager;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
@@ -47,8 +23,24 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.example.android.actionbarcompat.ActionBarActivity;
+import gov.pianzong.androidnga.R;
+import org.apache.commons.io.IOUtils;
+import sp.phone.adapter.SpinnerUserListAdapter;
+import sp.phone.bean.User;
+import sp.phone.forumoperation.HttpPostClient;
+import sp.phone.forumoperation.ThreadPostAction;
+import sp.phone.fragment.EmotionCategorySelectFragment;
+import sp.phone.fragment.EmotionDialogFragment;
+import sp.phone.fragment.ExtensionEmotionFragment;
+import sp.phone.interfaces.EmotionCategorySelectedListener;
+import sp.phone.interfaces.OnEmotionPickedListener;
+import sp.phone.task.FileUploadTask;
+import sp.phone.utils.*;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 
 public class PostActivity extends ActionBarActivity
 	implements FileUploadTask.onFileUploaded,
@@ -157,53 +149,7 @@ public class PostActivity extends ActionBarActivity
 			titleText.setTextColor(textColor);
 		}
 
-		/*
-		button_commit = (Button)findViewById(R.id.reply_commit_button);
-		button_cancel = (Button)findViewById(R.id.reply_cancel_button);
-		button_upload = (ImageButton) findViewById(R.id.imageButton_upload);
-		
-		button_commit.setOnClickListener(new ButtonCommitListener(REPLY_URL));
-		button_cancel.setOnClickListener( new OnClickListener(){
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				PostActivity.this.finish();
-		 	}
-			}
-		);
-		
-		button_upload.setOnClickListener(new OnClickListener(){
 
-			@Override
-			public void onClick(View v) {
-                Intent intent = new Intent();  
-                intent.setType("image/*");  
-                intent.setAction(Intent.ACTION_GET_CONTENT);   
-                startActivityForResult(intent,  REQUEST_CODE_SELECT_PIC);  
-				
-			}
-			
-		}
-		);
-		button_emotion = (ImageButton) findViewById(R.id.imageButton_emotion);
-		
-		button_emotion.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-				Fragment prev = getSupportFragmentManager().findFragmentByTag
-						(EMOTION_CATEGORY_TAG);
-				if (prev != null) {
-		            ft.remove(prev);
-		        }
-
-		        DialogFragment newFragment = new EmotionCategorySelectFragment();
-		        newFragment.show(ft, EMOTION_CATEGORY_TAG);
-				
-			}
-			
-		}
-		);*/
 		
 		
 		userList = (Spinner) findViewById(R.id.user_list);
