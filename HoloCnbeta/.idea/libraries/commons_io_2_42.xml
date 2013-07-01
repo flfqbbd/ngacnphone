@@ -2,6 +2,7 @@
   <library name="commons-io-2.4">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/HoloCnbeta/libs/commons-io-2.4.jar!/" />
+      <root url="jar://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/libs/commons-io-2.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
