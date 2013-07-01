@@ -23,6 +23,7 @@ public class HeadLineFragment extends Fragment{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
-        pager.setAdapter(new HeadlinePagerAdapter(getFragmentManager()));
+        final String category[] = getResources().getStringArray(R.array.category_list);
+        pager.setAdapter(new HeadlinePagerAdapter(category,getFragmentManager()));
     }
 }

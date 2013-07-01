@@ -10,9 +10,11 @@ import gov.pianzong.fragment.NewsListFragment;
  * Created by Administrator on 13-6-30.
  */
 public class HeadlinePagerAdapter extends FragmentPagerAdapter {
-
-    public HeadlinePagerAdapter(FragmentManager fm) {
+    private  final  String category[];
+    public HeadlinePagerAdapter(String category[],FragmentManager fm) {
         super(fm);
+        this.category =category;
+
     }
 
     @Override
@@ -22,11 +24,11 @@ public class HeadlinePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return category == null ?0:category.length;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return String.valueOf(position+1);
+        return category[position];
     }
 }

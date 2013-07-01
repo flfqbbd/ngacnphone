@@ -1,6 +1,7 @@
 package gov.pianzong.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import gov.pianzong.holocnbeta.CommentActivity;
 import gov.pianzong.holocnbeta.R;
 import gov.pianzong.util.AppConstants;
 
@@ -57,6 +59,10 @@ public class NewsContentFragment extends Fragment {
         boolean ret  = true;
         switch (item.getItemId()){
             case R.id.action_comment:
+                Intent intent = new Intent();
+                intent.putExtra(AppConstants.ARTICLE_ID,articleId);
+                intent.setClass(getActivity(), CommentActivity.class);
+                startActivity(intent);
                 break;
             default:
                 ret = false;
