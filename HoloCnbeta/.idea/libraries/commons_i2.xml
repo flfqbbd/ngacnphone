@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="commons-i">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/HoloCnbeta/libs/commons-i.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
