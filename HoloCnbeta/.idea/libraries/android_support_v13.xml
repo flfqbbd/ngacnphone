@@ -2,7 +2,6 @@
   <library name="android-support-v13">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/HoloCnbeta/libs/android-support-v13.jar!/" />
-      <root url="jar://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/libs/android-support-v13.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
