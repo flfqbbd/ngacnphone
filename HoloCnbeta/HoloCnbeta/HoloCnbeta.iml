@@ -21,50 +21,6 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta">
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/r/debug" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/rs" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/aidl/debug" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/res/rs/debug" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/res" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/jni" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/assets" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/jni" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/rs/debug" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/res" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/aidl" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/resources" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/rs" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/main/resources" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/debug/assets" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/buildConfig/debug" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/rs" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/buildConfig/test" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/res/rs/test" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/resources" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/java" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/aidl" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/r/test" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/assets" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/jni" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/src/instrumentTest/res" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/aidl/test" isTestSource="true" />
-      <sourceFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/source/rs/test" isTestSource="true" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/apk" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/assets" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/bundles" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/classes" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/dependency-cache" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/exploded-bundles" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/incremental" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/libs" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/manifests" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/symbols" />
-      <excludeFolder url="file://$USER_HOME$/AndroidStudioProjects/HoloCnbetaProject/HoloCnbeta/build/tmp" />
-    </content>
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/build/source/r/debug" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build/source/aidl/debug" isTestSource="false" />
@@ -106,6 +62,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/libs" />
       <excludeFolder url="file://$MODULE_DIR$/build/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/build/source" />
       <excludeFolder url="file://$MODULE_DIR$/build/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
