@@ -29,7 +29,7 @@ public class NewsContentActivity extends Activity {
             Bundle args = new Bundle(getIntent().getExtras());
             Fragment f = new NewsContentFragment();
             f.setArguments(args);
-            getFragmentManager().beginTransaction().add(R.id.holder,f).commit();
+            getFragmentManager().beginTransaction().replace(R.id.holder,f).commit();
         }
 
         /*wv = (WebView) LayoutInflater.from(this).inflate(R.layout.news_content,null);

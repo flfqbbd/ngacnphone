@@ -32,15 +32,18 @@ public class NewsContentFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         articleId = getArguments().getInt(AppConstants.ARTICLE_ID,0);
 
-
-        wv.setWebViewClient(new WebViewClient(){
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
-        wv.loadUrl(AppConstants.getNewsContentUrl(articleId));
+        if(articleId != 0)
+        {
+            wv.setWebViewClient(new WebViewClient(){
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    view.loadUrl(url);
+                    return true;
+                }
+            });
+            wv.loadUrl(AppConstants.getNewsContentUrl(articleId));
+            this.setHasOptionsMenu(true);
+        }
         super.onViewCreated(view, savedInstanceState);
     }
 
