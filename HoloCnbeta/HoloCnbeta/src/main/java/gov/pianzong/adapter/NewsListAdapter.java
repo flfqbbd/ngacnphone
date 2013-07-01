@@ -1,5 +1,7 @@
 package gov.pianzong.adapter;
 
+import gov.pianzong.holocnbeta.R;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,15 +37,24 @@ public class NewsListAdapter extends BaseAdapter {
         return newsList.get(i).getArticleID();
     }
 
+    private  static class  ViewHolder{
+        public  TextView titleView;
+    };
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        TextView tv = null;
-        if(view != null)
-            tv = (TextView) view;
+        ViewHolder holder;
+        if(view != null){
+            holder = (ViewHolder) view.getTag();
+        }
         else
-            tv = new TextView(viewGroup.getContext());
-         tv.setText(newsList.get(i).getTitle());
-        return tv;
+        {
+            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.news_item,viewGroup,false);
+            holder = new ViewHolder();
+            holder.titleView = (TextView)view.findViewById(R.id.title_text_view);
+            view.setTag(holder);
+        }
+        holder.titleView.setText(newsList.get(i).getTitle());;
+        return view;
     }
 
     public void clear()
