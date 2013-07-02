@@ -27,29 +27,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="161ae794-5bd9-4d49-87a1-1a27cdc9125a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-    </list>
-    <list id="32a2bc13-5b4e-47f4-85f1-0b52f0763630" name="Failed commit: Default" comment="评论">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/holocnbeta/CommentActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/bean/CommentInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/CommentListAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/task/CommentLoadTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/CommentsFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/comment_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/res/values/string_array.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/util/AppConstants.java" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/util/AppConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/HeadLineFragment.java" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/HeadLineFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/HeadlinePagerAdapter.java" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/HeadlinePagerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/HoloCnbeta.iml" afterPath="$PROJECT_DIR$/HoloCnbeta/HoloCnbeta.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbetaProject.iml" afterPath="$PROJECT_DIR$/HoloCnbetaProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/NewsContentFragment.java" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/NewsContentFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/NewsListAdapter.java" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/NewsListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v13.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v132.xml" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v132.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloCnbeta/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/HoloCnbeta/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="32a2bc13-5b4e-47f4-85f1-0b52f0763630" name="Failed commit: Default" comment="评论" />
     <ignored path="HoloCnbeta.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="HoloCnbeta/build/" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +58,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -106,6 +94,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/CommentsFragment.java" line="29" class="gov.pianzong.fragment.CommentsFragment" package="gov.pianzong.fragment">
         <option name="ENABLED" value="true" />
@@ -146,7 +135,58 @@
     <favorites_list name="HoloCnbeta" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="NewsListAdapter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/NewsListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="97" column="8" selection-start="3318" selection-end="3434" vertical-scroll-proportion="0.52838427" vertical-offset="1496" max-vertical-offset="2398">
+              <folding>
+                <element signature="e#3606#3662#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="31" selection-start="441" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsListLoadTask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/task/NewsListLoadTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1628">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="37" selection-start="450" selection-end="450" vertical-scroll-proportion="-2.148148" vertical-offset="184" max-vertical-offset="1474">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gradle.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="5" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -207,10 +247,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/new_content_hoder.xml" />
-        <option value="$PROJECT_DIR$/local.properties" />
-        <option value="$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml" />
-        <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/NewsListAdapter.java" />
         <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/task/AsyncTask.java" />
         <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/bean/CommentInfo.java" />
         <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/util/AppConstants.java" />
@@ -223,6 +259,10 @@
         <option value="$PROJECT_DIR$/HoloCnbeta/src/main/res/values/string_array.xml" />
         <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/HeadLineFragment.java" />
         <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/HeadlinePagerAdapter.java" />
+        <option value="$PROJECT_DIR$/HoloCnbeta/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/.idea/gradle.xml" />
+        <option value="$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml" />
+        <option value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/NewsListAdapter.java" />
       </list>
     </option>
   </component>
@@ -232,8 +272,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1292" />
-    <option name="height" value="776" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -261,22 +301,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HoloCnbeta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HoloCnbeta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Problems" />
+        <subPane subId="Tests" />
         <subPane subId="Production">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -285,7 +312,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-        <subPane subId="Tests" />
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -537,7 +563,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="holocnbeta" />
+              <option name="myItemId" value="task" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -585,8 +611,92 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pianzong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scopes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="copyright" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HoloCnbeta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -595,7 +705,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
@@ -606,18 +716,18 @@
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/HoloCnbeta/build" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="01ccac35d8c792c0" />
-    <property name="DEBUGGABLE_DEVICE" value="01ccac35d8c792c0" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="DEBUGGABLE_DEVICE" value="01ccac35d8c792c0" />
     <property name="DEBUGGABLE_PROCESS" value="gov.pianzong.holocnbeta" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="2.2" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="n10" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -794,24 +904,24 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\develop\workspace\HoloCnbeta" />
-          <option name="myCopyRoot" value="E:\develop\workspace\HoloCnbeta" />
+          <option name="myVcsRoot" value="C:\workspace\trunk\HoloCnbeta" />
+          <option name="myCopyRoot" value="C:\workspace\trunk\HoloCnbeta" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\develop\workspace\HoloCnbeta\.idea" />
-          <option name="myCopyRoot" value="E:\develop\workspace\HoloCnbeta\.idea" />
+          <option name="myVcsRoot" value="C:\workspace\trunk\HoloCnbeta\.idea" />
+          <option name="myCopyRoot" value="C:\workspace\trunk\HoloCnbeta\.idea" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\develop\workspace\HoloCnbeta\HoloCnbeta" />
-          <option name="myCopyRoot" value="E:\develop\workspace\HoloCnbeta\HoloCnbeta" />
+          <option name="myVcsRoot" value="C:\workspace\trunk\HoloCnbeta\HoloCnbeta" />
+          <option name="myCopyRoot" value="C:\workspace\trunk\HoloCnbeta\HoloCnbeta" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\develop\workspace\HoloCnbeta" />
-          <option name="myCopyRoot" value="E:\develop\workspace\HoloCnbeta" />
+          <option name="myVcsRoot" value="C:\workspace\trunk\HoloCnbeta" />
+          <option name="myCopyRoot" value="C:\workspace\trunk\HoloCnbeta" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -885,30 +995,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1292" height="776" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20340356" sideWeight="0.6704362" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32252836" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32217574" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15802269" sideWeight="0.6704362" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.68497574" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5202593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32252836" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34449095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33193862" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33225283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.67782426" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32635984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33193862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32775453" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.68497574" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.68497574" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24511401" sideWeight="0.67747164" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3241491" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.68497574" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24484536" sideWeight="0.67782426" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32357043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.67782426" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -958,7 +1068,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="评论" />
+    <option name="LAST_COMMIT_MESSAGE" value="评论数和发帖时间" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -980,140 +1090,127 @@
     <MESSAGE value="work around for install path" />
     <MESSAGE value="news item ui improve" />
     <MESSAGE value="评论" />
+    <MESSAGE value="评论数和发帖时间" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/NewsContentFragment.java">
+    <entry file="file://$PROJECT_DIR$/.idea/scopes/scope_settings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="67" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1342">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="457">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/CommentsFragment.java">
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="20" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="902">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="638">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/util/HtppUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="19" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1672">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="62" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.33333334" vertical-offset="622" max-vertical-offset="1232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/headline_viewpager.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="358" selection-end="543" vertical-scroll-proportion="0.6094183" vertical-offset="0" max-vertical-offset="1474">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/holocnbeta/CommentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="35" selection-start="609" selection-end="609" vertical-scroll-proportion="0.61082476" vertical-offset="71" max-vertical-offset="550">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/comment_item.xml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/test/mock/MockResources.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="49" selection-start="588" selection-end="588" vertical-scroll-proportion="0.73130196" vertical-offset="0" max-vertical-offset="462">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/NewsListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="8" selection-start="731" selection-end="819" vertical-scroll-proportion="-0.5146667" vertical-offset="435" max-vertical-offset="1144">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/holocnbeta/NewsContentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.40874037" vertical-offset="171" max-vertical-offset="946">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/task/CommentLoadTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="515" selection-end="515" vertical-scroll-proportion="0.33161953" vertical-offset="333" max-vertical-offset="1650">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#927#940#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/CommentListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="19" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="1474">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/values/string_array.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/holocnbeta/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1166">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/HoloCnbeta/libs/android-support-v13.jar!/android/support/v13/app/FragmentPagerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="567" selection-end="567" vertical-scroll-proportion="0.18857142" vertical-offset="198" max-vertical-offset="902">
+        <state line="11" column="34" selection-start="440" selection-end="440" vertical-scroll-proportion="0.33333334" vertical-offset="72" max-vertical-offset="1826">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/content/res/Resources.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="4417" selection-end="4417" vertical-scroll-proportion="0.29333332" vertical-offset="1386" max-vertical-offset="2948">
-          <folding>
-            <element signature="e#0#7881#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/fragment/HeadLineFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="46" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="770">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/HeadlinePagerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="32" selection-start="779" selection-end="779" vertical-scroll-proportion="0.49100256" vertical-offset="403" max-vertical-offset="792">
+        <state line="17" column="67" selection-start="900" selection-end="900" vertical-scroll-proportion="0.43243244" vertical-offset="160" max-vertical-offset="2926">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="5" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="31" selection-start="441" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/task/NewsListLoadTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1628">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/res/layout/news_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="37" selection-start="450" selection-end="450" vertical-scroll-proportion="-2.148148" vertical-offset="184" max-vertical-offset="1474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HoloCnbeta/src/main/java/gov/pianzong/adapter/NewsListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="8" selection-start="3318" selection-end="3434" vertical-scroll-proportion="0.52838427" vertical-offset="1496" max-vertical-offset="2398">
+          <folding>
+            <element signature="e#3606#3662#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,7 +1254,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.6</last-edited>
+          <last-edited>1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1174,7 +1271,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
+                <option value="0.50180507" />
               </list>
             </option>
           </splitter-proportions>

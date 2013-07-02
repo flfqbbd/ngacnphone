@@ -8,5 +8,9 @@
     <string name="action_comments" >comments</string>
     <string name="hello_world" >Hello world!
     </string>
+    <string name="minutes_before" >%d分钟前</string>
+    <string name="hours_before" >%d小时时前</string>
+    <string name="days_before" >%d天前</string>
+    <string name="months_before" >%d月前</string>
 
 </resources>

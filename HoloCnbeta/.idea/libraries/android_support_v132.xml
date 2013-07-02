@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="android-support-v13">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/HoloCnbeta/libs/android-support-v13.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
