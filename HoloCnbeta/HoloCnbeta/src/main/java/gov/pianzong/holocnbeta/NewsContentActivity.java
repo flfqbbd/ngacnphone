@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -23,6 +24,7 @@ public class NewsContentActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // articleId = getIntent().getIntExtra(AppConstants.ARTICLE_ID,0);
+        requestWindowFeature(Window.FEATURE_PROGRESS);
         setContentView(R.layout.new_content_hoder);
         if(savedInstanceState == null)
         {

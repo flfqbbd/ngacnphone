@@ -1,10 +1,12 @@
 package gov.pianzong.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -16,6 +18,11 @@ import gov.pianzong.holocnbeta.R;
  */
 public class CommentListAdapter extends BaseAdapter {
     private  List<CommentInfo>list;
+    private Context context;
+
+    public CommentListAdapter(Context context) {
+        this.context = context;
+    }
 
     @Override
     public int getCount() {
@@ -40,9 +47,11 @@ public class CommentListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder  = null;
+        if(context == null)
+            context = viewGroup.getContext();
         if(view == null)
         {
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.comment_item,viewGroup,false);
+            view = LayoutInflater.from(context).inflate(R.layout.comment_item,viewGroup,false);
             holder = new ViewHolder();
             holder.comment = (TextView) view.findViewById(R.id.comment_text_view);
             holder.name = (TextView) view.findViewById(R.id.name_text_view);
@@ -58,11 +67,16 @@ public class CommentListAdapter extends BaseAdapter {
         CommentInfo info = list.get(i);
         holder.comment.setText(info.getComment());
         holder.name.setText(info.getName());
-        holder.votes.setText(viewGroup.getContext().getString(R.string.votes_format,info.getSupport(),info.getAgainst()));
+        String votes = context.getString(R.string.votes_support, info.getSupport())
+                +  context.getString(R.string.votes_against, info.getAgainst());
+        holder.votes.setText(votes);
         return view;
     }
     
     public void setList(List<CommentInfo> list){
+        if(list.size() ==0){
+            Toast.makeText(context,R.string.nocomment,Toast.LENGTH_SHORT).show();
+        }
         this.list = list;
     }
 

@@ -12,5 +12,7 @@
     <string name="hours_before" >%d小时时前</string>
     <string name="days_before" >%d天前</string>
     <string name="months_before" >%d月前</string>
-    <string name="votes_format" >顶(%d) 踩(%d)</string>
+    <string name="votes_support" >顶(%d)</string>
+    <string name="votes_against" > 踩(%d)</string>
+    <string name="nocomment" >木有评论</string>
 </resources>

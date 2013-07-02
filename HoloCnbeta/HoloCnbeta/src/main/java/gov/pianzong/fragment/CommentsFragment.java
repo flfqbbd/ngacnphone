@@ -27,7 +27,7 @@ public class CommentsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        lv.setAdapter(new CommentListAdapter());
+        lv.setAdapter(new CommentListAdapter(getActivity()));
         new CommentLoadTask((CommentListAdapter) lv.getAdapter())
                 .executeOnExecutor(CommentLoadTask.THREAD_POOL_EXECUTOR,
                         getArguments().getInt(AppConstants.ARTICLE_ID,0));

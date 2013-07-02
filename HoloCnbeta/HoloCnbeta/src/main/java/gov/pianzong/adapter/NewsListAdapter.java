@@ -75,7 +75,7 @@ public class NewsListAdapter extends BaseAdapter {
 
         if(i+1 == getCount() && !isLoading){
             isLoading = true;
-            //new NewsListLoadTask(this).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,info.getArticleID());
+            new NewsListLoadTask(this).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,info.getArticleID());
         }
         return view;
     }

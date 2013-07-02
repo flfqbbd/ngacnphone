@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -41,6 +43,13 @@ public class NewsContentFragment extends Fragment {
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
                     view.loadUrl(url);
                     return true;
+                }
+            });
+
+            wv.setWebChromeClient(new WebChromeClient(){
+                @Override
+                public void onProgressChanged(WebView view, int newProgress) {
+                    getActivity().setProgress(newProgress*100);
                 }
             });
             wv.loadUrl(AppConstants.getNewsContentUrl(articleId));

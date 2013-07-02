@@ -3,6 +3,7 @@ package gov.pianzong.holocnbeta;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.view.Window;
 
 import gov.pianzong.fragment.CommentsFragment;
 import gov.pianzong.fragment.NewsContentFragment;

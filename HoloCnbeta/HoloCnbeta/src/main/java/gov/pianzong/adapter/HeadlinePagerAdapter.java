@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
 
+import gov.pianzong.fragment.HotCommentFragment;
 import gov.pianzong.fragment.NewsListFragment;
 
 /**
@@ -19,7 +20,17 @@ public class HeadlinePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        return new NewsListFragment();
+        Fragment f = null;
+        switch (i)
+        {
+            case 0:
+                f = new NewsListFragment();
+                break;
+            default:
+                f = new HotCommentFragment();
+
+        }
+        return f;
     }
 
     @Override
