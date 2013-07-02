@@ -34,6 +34,8 @@ public class CommentListAdapter extends BaseAdapter {
     }
     private  static  class ViewHolder{
         public TextView comment;
+        public TextView name;
+        public TextView votes;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -43,6 +45,9 @@ public class CommentListAdapter extends BaseAdapter {
             view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.comment_item,viewGroup,false);
             holder = new ViewHolder();
             holder.comment = (TextView) view.findViewById(R.id.comment_text_view);
+            holder.name = (TextView) view.findViewById(R.id.name_text_view);
+            holder.votes = (TextView) view.findViewById(R.id.vote_text_view);
+
             view.setTag(holder);
         }
         else
@@ -50,7 +55,10 @@ public class CommentListAdapter extends BaseAdapter {
 
             holder = (ViewHolder) view.getTag();
         }
-        holder.comment.setText(list.get(i).getComment());
+        CommentInfo info = list.get(i);
+        holder.comment.setText(info.getComment());
+        holder.name.setText(info.getName());
+        holder.votes.setText(viewGroup.getContext().getString(R.string.votes_format,info.getSupport(),info.getAgainst()));
         return view;
     }
     
