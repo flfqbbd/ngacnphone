@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <array name="category_list">
-        <item>资讯</item>
-        <item>热门评论</item>
-        <item>热门主题</item>
-    </array>
-</resources>
