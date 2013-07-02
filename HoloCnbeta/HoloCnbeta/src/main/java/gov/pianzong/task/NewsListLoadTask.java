@@ -13,6 +13,7 @@ import gov.pianzong.adapter.NewsListAdapter;
 import gov.pianzong.bean.NewsInfo;
 import gov.pianzong.util.AppConstants;
 import gov.pianzong.util.HtppUtil;
+import gov.pianzong.util.StringUtil;
 
 /**
  * Created by Administrator on 13-6-30.
@@ -31,6 +32,8 @@ public class NewsListLoadTask extends AsyncTask<Integer,Integer,List<NewsInfo>> 
         String html = HtppUtil.getHtml(url,null,null,0);
        //html = html.replaceAll("\"ArticleID\"","\"articleID\"");
         List<NewsInfo> list = new ArrayList<NewsInfo>();
+        if(StringUtil.isEmpty(html))
+            return list;
         try {
             JSONArray ja= new JSONArray(html);
             final int length = ja.length();

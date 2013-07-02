@@ -13,6 +13,7 @@ import gov.pianzong.adapter.CommentListAdapter;
 import gov.pianzong.bean.CommentInfo;
 import gov.pianzong.util.AppConstants;
 import gov.pianzong.util.HtppUtil;
+import gov.pianzong.util.StringUtil;
 
 /**
  * Created by Administrator on 13-7-2.
@@ -31,6 +32,8 @@ public class CommentLoadTask extends AsyncTask<Integer,Integer, List<CommentInfo
         String html = HtppUtil.getHtml(url,null,null,0);
         JSONArray ja= null;
         List<CommentInfo> ret = new ArrayList<CommentInfo>();
+        if(StringUtil.isEmpty(html))
+            return ret;
         try {
             ja = new JSONArray(html);
             final int length = ja.length();
