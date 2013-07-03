@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 import gov.pianzong.bean.NewsInfo;
+import gov.pianzong.interfaces.NewsClickedListener;
 import gov.pianzong.task.NewsListLoadTask;
 
 /**
@@ -27,6 +28,12 @@ public class NewsListAdapter extends BaseAdapter {
 
     private List<NewsInfo> newsList = new ArrayList<NewsInfo>();
     private boolean isLoading = false;
+    final private NewsClickedListener callBack;
+
+    public NewsListAdapter(NewsClickedListener callBack) {
+        this.callBack = callBack;
+    }
+
     @Override
     public int getCount() {
         if(newsList == null)
@@ -75,7 +82,7 @@ public class NewsListAdapter extends BaseAdapter {
 
         if(i+1 == getCount() && !isLoading){
             isLoading = true;
-            new NewsListLoadTask(this).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,info.getArticleID());
+            new NewsListLoadTask(this,callBack).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,info.getArticleID());
         }
         return view;
     }

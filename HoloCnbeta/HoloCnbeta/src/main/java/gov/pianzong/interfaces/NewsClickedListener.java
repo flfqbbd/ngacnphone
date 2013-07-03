@@ -1,5 +1,8 @@
 package gov.pianzong.interfaces;
 
+
+import android.widget.ListView;
+
 import gov.pianzong.bean.NewsInfo;
 
 /**
@@ -7,4 +10,7 @@ import gov.pianzong.bean.NewsInfo;
  */
 public interface NewsClickedListener {
     public  void onClick(NewsInfo info);
+    public  void registRefreshableView(ListView lv);
+    public void startLoad();
+    public  void  loadFinish();
 }

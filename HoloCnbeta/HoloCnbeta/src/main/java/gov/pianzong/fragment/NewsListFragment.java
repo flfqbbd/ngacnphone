@@ -31,14 +31,15 @@ public class NewsListFragment extends Fragment {
         try{
             final  NewsClickedListener listener = (NewsClickedListener) getActivity();
             lv.setOnItemClickListener( new NewsItemClickedListener(listener));
+            lv.setAdapter(new NewsListAdapter(listener));
+            listener.registRefreshableView(lv);
+            new NewsListLoadTask((NewsListAdapter) lv.getAdapter(),listener).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,0);
         }catch (ClassCastException e){
             StringBuilder sb = new StringBuilder();
             sb.append(getClass().getSimpleName()).append(" should implements ").append(NewsClickedListener.class.getSimpleName());
             Log.e(getClass().getSimpleName(),sb.toString());
         }
-        lv.setAdapter(new NewsListAdapter());
 
-       new NewsListLoadTask((NewsListAdapter) lv.getAdapter()).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,0);
     }
 
     static class NewsItemClickedListener implements AdapterView.OnItemClickListener{

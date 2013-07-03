@@ -11,6 +11,7 @@ import java.util.List;
 
 import gov.pianzong.adapter.NewsListAdapter;
 import gov.pianzong.bean.NewsInfo;
+import gov.pianzong.interfaces.NewsClickedListener;
 import gov.pianzong.util.AppConstants;
 import gov.pianzong.util.HtppUtil;
 import gov.pianzong.util.StringUtil;
@@ -20,9 +21,11 @@ import gov.pianzong.util.StringUtil;
  */
 public class NewsListLoadTask extends AsyncTask<Integer,Integer,List<NewsInfo>> {
     private NewsListAdapter adapter;
+    private final NewsClickedListener callBack;
     private int startId = 0;
-    public NewsListLoadTask(NewsListAdapter adapter) {
+    public NewsListLoadTask(NewsListAdapter adapter,NewsClickedListener callBack) {
         this.adapter = adapter;
+        this.callBack = callBack;
     }
 
     @Override
@@ -60,19 +63,21 @@ public class NewsListLoadTask extends AsyncTask<Integer,Integer,List<NewsInfo>> 
 
     @Override
     protected void onPreExecute() {
-        super.onPreExecute();
+        callBack.startLoad();
     }
 
     @Override
     protected void onPostExecute(List<NewsInfo> list) {
-        adapter.append(list);
+
         if(startId == 0)
         {
-            adapter.notifyDataSetInvalidated();
+            adapter.clear();
         }
-        else
+        adapter.append(list);
+        adapter.notifyDataSetChanged();
+        if(callBack != null)
         {
-            adapter.notifyDataSetChanged();
+            callBack.loadFinish();
         }
     }
 

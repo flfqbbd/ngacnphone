@@ -4,18 +4,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ListView;
 
+import gov.pianzong.adapter.NewsListAdapter;
 import gov.pianzong.bean.NewsInfo;
 import gov.pianzong.holocnbeta.R;
 import gov.pianzong.interfaces.NewsClickedListener;
+import gov.pianzong.task.NewsListLoadTask;
 import gov.pianzong.util.AppConstants;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
 
 public class MainActivity extends Activity implements NewsClickedListener {
 
-
+    PullToRefreshAttacher helper;
     boolean dualScreen = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        helper = new PullToRefreshAttacher(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -37,6 +43,29 @@ public class MainActivity extends Activity implements NewsClickedListener {
         {
             openNewActivity(info);
         }
+    }
+
+    @Override
+    public void registRefreshableView(ListView lv) {
+        final ListView listView = lv;
+        helper.setRefreshableView(lv,new PullToRefreshAttacher.OnRefreshListener() {
+            @Override
+            public void onRefreshStarted(View view) {
+                new NewsListLoadTask((NewsListAdapter) listView.getAdapter(),MainActivity.this).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,0);
+
+            }
+        });
+    }
+
+    @Override
+    public void startLoad() {
+        if(!helper.isRefreshing())
+            helper.setRefreshing(true);
+    }
+
+    @Override
+    public void loadFinish() {
+        helper.setRefreshComplete();
     }
 
 
