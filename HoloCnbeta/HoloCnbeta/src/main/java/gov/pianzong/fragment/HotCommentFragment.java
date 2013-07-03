@@ -13,6 +13,9 @@ import android.widget.TextView;
 public class HotCommentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if(container == null){
+            return  null;
+        }
         return new TextView(container.getContext());
     }
 
