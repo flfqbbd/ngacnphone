@@ -1,5 +1,6 @@
 package gov.pianzong.fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import gov.pianzong.util.AppConstants;
  */
 public class NewsContentFragment extends Fragment {
     private WebView wv;
-    private  int articleId;
+    private  int articleId = 0;
 
 
     @Override
@@ -34,7 +35,9 @@ public class NewsContentFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        articleId = getArguments().getInt(AppConstants.ARTICLE_ID,0);
+        Bundle b = getArguments();
+        if(b != null)
+        articleId = b.getInt(AppConstants.ARTICLE_ID,0);
 
         if(articleId != 0)
         {
@@ -49,7 +52,10 @@ public class NewsContentFragment extends Fragment {
             wv.setWebChromeClient(new WebChromeClient(){
                 @Override
                 public void onProgressChanged(WebView view, int newProgress) {
-                    getActivity().setProgress(newProgress*100);
+                    Activity a = getActivity();
+                    if(a!= null) {
+                        a.setProgress(newProgress * 100);
+                    }
                 }
             });
             wv.loadUrl(AppConstants.getNewsContentUrl(articleId));
