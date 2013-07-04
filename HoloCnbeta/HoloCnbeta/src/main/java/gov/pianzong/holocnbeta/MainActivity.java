@@ -3,13 +3,14 @@ package gov.pianzong.holocnbeta;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 
+import gov.pianzong.adapter.HeadlinePagerAdapter;
 import gov.pianzong.adapter.NewsListAdapter;
 import gov.pianzong.bean.NewsInfo;
-import gov.pianzong.holocnbeta.R;
 import gov.pianzong.interfaces.NewsClickedListener;
 import gov.pianzong.task.NewsListLoadTask;
 import gov.pianzong.util.AppConstants;
@@ -24,6 +25,10 @@ public class MainActivity extends Activity implements NewsClickedListener {
         helper = new PullToRefreshAttacher(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        final String category[] = getResources().getStringArray(R.array.category_list);
+        pager.setAdapter(new HeadlinePagerAdapter(category,getFragmentManager()));
     }
 
 
