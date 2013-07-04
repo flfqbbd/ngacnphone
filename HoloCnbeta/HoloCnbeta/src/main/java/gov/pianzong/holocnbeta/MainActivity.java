@@ -51,15 +51,9 @@ public class MainActivity extends Activity implements NewsClickedListener {
     }
 
     @Override
-    public void registRefreshableView(ListView lv) {
-        final ListView listView = lv;
-        helper.setRefreshableView(lv,new PullToRefreshAttacher.OnRefreshListener() {
-            @Override
-            public void onRefreshStarted(View view) {
-                new NewsListLoadTask((NewsListAdapter) listView.getAdapter(),MainActivity.this).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,0);
+    public void registRefreshableView(View view,PullToRefreshAttacher.OnRefreshListener listener) {
 
-            }
-        });
+        helper.setRefreshableView(view,listener);
     }
 
     @Override

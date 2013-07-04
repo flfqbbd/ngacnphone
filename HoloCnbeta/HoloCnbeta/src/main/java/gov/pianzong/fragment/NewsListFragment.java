@@ -14,11 +14,13 @@ import gov.pianzong.bean.NewsInfo;
 import gov.pianzong.holocnbeta.R;
 import gov.pianzong.interfaces.NewsClickedListener;
 import gov.pianzong.task.NewsListLoadTask;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
 
 /**
- * Created by Administrator on 13-6-30.
+ * Created by Administrator on 13-6-30,13-6-30,${PROJECT_NAME}
+
  */
-public class NewsListFragment extends Fragment {
+public class NewsListFragment extends Fragment implements PullToRefreshAttacher.OnRefreshListener{
     private ListView lv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,13 +29,32 @@ public class NewsListFragment extends Fragment {
     }
 
     @Override
+    public void onRefreshStarted(View view) {
+        refresh();
+    }
+    private  void refresh(){
+        try{
+            final  NewsClickedListener listener = (NewsClickedListener) getActivity();
+            new NewsListLoadTask((NewsListAdapter) lv.getAdapter(),listener).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,0);
+        }catch (ClassCastException e){
+            StringBuilder sb = new StringBuilder();
+            sb.append(getClass().getSimpleName()).append(" should implements ").append(NewsClickedListener.class.getSimpleName());
+            Log.e(getClass().getSimpleName(),sb.toString());
+        }
+
+    }
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         try{
             final  NewsClickedListener listener = (NewsClickedListener) getActivity();
-            lv.setOnItemClickListener( new NewsItemClickedListener(listener));
-            lv.setAdapter(new NewsListAdapter(listener));
-            listener.registRefreshableView(lv);
-            new NewsListLoadTask((NewsListAdapter) lv.getAdapter(),listener).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,0);
+
+            if (listener != null) {
+                lv.setOnItemClickListener( new NewsItemClickedListener(listener));
+                lv.setAdapter(new NewsListAdapter(listener));
+                listener.registRefreshableView(lv,this);
+            }
+
+            refresh();
         }catch (ClassCastException e){
             StringBuilder sb = new StringBuilder();
             sb.append(getClass().getSimpleName()).append(" should implements ").append(NewsClickedListener.class.getSimpleName());
