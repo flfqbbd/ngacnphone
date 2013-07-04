@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.http.HttpResponseCache;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import gov.pianzong.bean.NewsInfo;
 import gov.pianzong.interfaces.NewsClickedListener;
 import gov.pianzong.task.NewsListLoadTask;
 import gov.pianzong.util.AppConstants;
+import gov.pianzong.util.StringUtil;
 import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
 
 public class MainActivity extends Activity implements NewsClickedListener {
@@ -39,10 +41,12 @@ public class MainActivity extends Activity implements NewsClickedListener {
 
     private  void installHtppCache(){
         try {
-            File httpCacheDir = new File(getExternalCacheDir(), "logoCache");
+            File dir = getExternalCacheDir();
+            if(dir == null)
+                dir = getCacheDir();
+            File httpCacheDir = new File( dir, "logoCache");
             long httpCacheSize = 50 * 1024 * 1024; // 50 MiB
              HttpResponseCache.install(httpCacheDir, httpCacheSize);
-
         }catch (IOException e) {
                 Log.i(getClass().getSimpleName(), "HTTP response cache installation failed:" + e);
         }
