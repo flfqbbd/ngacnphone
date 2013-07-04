@@ -2,11 +2,16 @@ package gov.pianzong.holocnbeta;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.http.HttpResponseCache;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
+
+import java.io.File;
+import java.io.IOException;
 
 import gov.pianzong.adapter.HeadlinePagerAdapter;
 import gov.pianzong.adapter.NewsListAdapter;
@@ -29,8 +34,28 @@ public class MainActivity extends Activity implements NewsClickedListener {
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         final String category[] = getResources().getStringArray(R.array.category_list);
         pager.setAdapter(new HeadlinePagerAdapter(category,getFragmentManager()));
+        installHtppCache();
     }
 
+    private  void installHtppCache(){
+        try {
+            File httpCacheDir = new File(getExternalCacheDir(), "logoCache");
+            long httpCacheSize = 50 * 1024 * 1024; // 50 MiB
+             HttpResponseCache.install(httpCacheDir, httpCacheSize);
+
+        }catch (IOException e) {
+                Log.i(getClass().getSimpleName(), "HTTP response cache installation failed:" + e);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        HttpResponseCache cache = HttpResponseCache.getInstalled();
+        if (cache != null) {
+            cache.flush();
+        }
+        super.onStop();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

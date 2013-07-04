@@ -19,7 +19,9 @@ import java.util.List;
 
 import gov.pianzong.bean.NewsInfo;
 import gov.pianzong.interfaces.NewsClickedListener;
+import gov.pianzong.task.LogoLoadTask;
 import gov.pianzong.task.NewsListLoadTask;
+import gov.pianzong.util.StringUtil;
 
 /**
  * Created by Administrator on 13-6-30.
@@ -53,11 +55,12 @@ public class NewsListAdapter extends BaseAdapter {
         return newsList.get(i).getArticleID();
     }
 
-    private  static class  ViewHolder{
+    public   static class  ViewHolder{
         public  TextView titleView;
         public  TextView dateView;
         public  TextView commentView;
         public ImageView logoImage;
+        public  int position;
     };
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -75,16 +78,32 @@ public class NewsListAdapter extends BaseAdapter {
             holder.logoImage = (ImageView)view.findViewById(R.id.logo_image_view);
             view.setTag(holder);
         }
+        holder.position = i;
         NewsInfo info = newsList.get(i);
         holder.titleView.setText(info.getTitle());
         holder.commentView.setText(String.valueOf(info.getCmtnum()));
         holder.dateView.setText(timeGap(viewGroup.getContext().getResources(),info.getPubtime()));
+
+        asyncLoadLogo(info,holder);
 
         if(i+1 == getCount() && !isLoading){
             isLoading = true;
             new NewsListLoadTask(this,callBack).executeOnExecutor(NewsListLoadTask.THREAD_POOL_EXECUTOR,info.getArticleID());
         }
         return view;
+    }
+
+    private  void asyncLoadLogo(NewsInfo info, ViewHolder holder){
+        String url = info.getTopicLogo();
+        if(StringUtil.isEmpty(url) || !url.startsWith("http")){
+            url = info.getTheme();
+        }
+
+        if(StringUtil.isEmpty(url) || !url.startsWith("http")){
+            return;
+        }
+        new LogoLoadTask(holder).executeOnExecutor(LogoLoadTask.THREAD_POOL_EXECUTOR,url);
+
     }
     private static final int SEC_PER_MIN = 60;
     private static final int SEC_PER_HOUR = 60*SEC_PER_MIN;
