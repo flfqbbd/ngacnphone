@@ -10,13 +10,19 @@ import sp.phone.utils.HttpUtil;
 import sp.phone.utils.ImageUtil;
 import sp.phone.utils.StringUtil;
 import android.content.Context;
+import android.content.Intent;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
+
+import static android.media.MediaScannerConnection.*;
 
 public class DownloadImageTask extends AsyncTask<String, Integer, String> {
 
 	private final Context context;
-	
+    private String fullPath;
 	
 	public DownloadImageTask(Context context) {
 		super();
@@ -36,6 +42,8 @@ public class DownloadImageTask extends AsyncTask<String, Integer, String> {
 				+ HttpUtil.PATH_IMAGES;
 		if(result != null)
 			description = result;
+        else
+            scanFile(context, new String[]{fullPath}, null, null);
 		Toast.makeText(context, description, Toast.LENGTH_SHORT).show();
 		super.onPostExecute(result);
 	}
@@ -64,7 +72,7 @@ public class DownloadImageTask extends AsyncTask<String, Integer, String> {
 		if(StringUtil.isEmpty(name))
 			return invalidURI;
 		int i = 0;
-		String fullPath = path+ "/" + name;
+		fullPath = path+ "/" + name;
 		String extension = FilenameUtils.getExtension(name);
 		String baseName = FilenameUtils.getBaseName(name);
 		do{

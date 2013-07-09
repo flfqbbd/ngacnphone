@@ -21,6 +21,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
+import android.os.Environment;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
@@ -136,7 +137,8 @@ public class MyApp extends Application implements PerferenceConstant {
 		boards.add(new Board(i, "335", "网站开发", R.drawable.p335));
 		boards.addCategoryName(i, "系统软硬件讨论");
 		i++;
-		
+
+        boards.add(new Board(i, "426", " 手机游戏", R.drawable.p426));
 		boards.add(new Board(i, "422", " 炉石传说", R.drawable.pdefault));
 		boards.add(new Board(i, "414", "游戏综合讨论", R.drawable.p414));
 		boards.add(new Board(i, "412", " 巫师之怒", R.drawable.p412));
@@ -219,7 +221,8 @@ public class MyApp extends Application implements PerferenceConstant {
 		HttpUtil.PATH_AVATAR = HttpUtil.PATH +
 				 "/nga_cache";
 		HttpUtil.PATH_NOMEDIA = HttpUtil.PATH + "/.nomedia";
-	}
+        HttpUtil.PATH_IMAGES = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath();
+    }
 
 	private void initUserInfo() {
 		

@@ -29,8 +29,8 @@ public class HttpUtil {
 			+ "/nga_cache";
 	public static String PATH_AVATAR_OLD = PATH_OLD +
 			 "/nga_cache";
-	public final static String PATH_IMAGES = android.os.Environment
-			.getExternalStorageDirectory().getAbsolutePath();	
+	public static String PATH_IMAGES = android.os.Environment
+			.getExternalStorageDirectory().getAbsolutePath()+"/Pictures";
 	
 	public static String PATH = android.os.Environment
 			.getExternalStorageDirectory()
