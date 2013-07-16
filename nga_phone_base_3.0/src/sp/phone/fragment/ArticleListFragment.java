@@ -43,7 +43,7 @@ import android.widget.Toast;
 public class ArticleListFragment extends Fragment
 	implements OnThreadPageLoadFinishedListener,PerferenceConstant{
 	final static private String TAG = ArticleListFragment.class.getSimpleName();
-	static final int QUOTE_ORDER = 0;
+	/*static final int QUOTE_ORDER = 0;
 	static final int REPLY_ORDER = 1;
 	static final int COPY_CLIPBOARD_ORDER = 2;
 	static final int SHOW_THISONLY_ORDER = 3;
@@ -51,7 +51,7 @@ public class ArticleListFragment extends Fragment
 	static final int SHOW_ALL = 5;
 	static final int POST_COMMENT = 6;
 	static final int SEARCH_POST = 7;
-	static final int SEARCH_SUBJECT = 8;
+	static final int SEARCH_SUBJECT = 8;*/
 	private ListView listview=null;
 	private ArticleListAdapter articleAdpater;
 	//private JsonThreadLoadTask task;
@@ -314,9 +314,11 @@ public class ArticleListFragment extends Fragment
 		case R.id.quote_subject:
 
 			final String quote_regex = "\\[quote\\]([\\s\\S])*\\[/quote\\]";
+            final String replay_regex = "\\[b\\]Reply to \\[pid=\\d+,\\d+,\\d+\\]Reply\\[/pid\\] Post by .+?\\[/b\\]";
 			content = content.replaceAll(quote_regex, "");
+            content = content.replaceAll(replay_regex, "");
 			final String postTime = row.getPostdate();
-			// final String url = map.get("url");
+
 			
 			if(!content.trim().endsWith("[/url]"))
 			{
@@ -326,29 +328,27 @@ public class ArticleListFragment extends Fragment
 					
 			}
 			content = StringUtil.unEscapeHtml(content);
-			mention = name;
-			if(row.getPid() == 0){
-				postPrefix.append("[quote][tid=");
-				postPrefix.append(tidStr);
-				postPrefix.append("]");
-				postPrefix.append("Topic");
-			}else{
+
+			if(row.getPid() != 0){
+                mention = name;
 				postPrefix.append("[quote][pid=");
 				postPrefix.append(row.getPid());
+                postPrefix.append(',')
+                .append(tidStr)
+                .append(",")
+                .append(page);
 				postPrefix.append("]");//Topic
 				postPrefix.append("Reply");
-			}
-			postPrefix.append("[/pid] [b]Post by ");
-			postPrefix.append(name);
-			postPrefix.append(" (");
-			postPrefix.append(postTime);
-			postPrefix.append("):[/b]\n");
-			postPrefix.append(content);
-			postPrefix.append("[/quote]");
+                postPrefix.append("[/pid] [b]Post by ");
+                postPrefix.append(name);
+                postPrefix.append(" (");
+                postPrefix.append(postTime);
+                postPrefix.append("):[/b]\n");
+                postPrefix.append(content);
+                postPrefix.append("[/quote]");
 
-			postPrefix.append("\n[@");
-			postPrefix.append(name);
-			postPrefix.append("]\n");
+			}
+
 		//case R.id.r:	
 			
 			if(!StringUtil.isEmpty(mention))

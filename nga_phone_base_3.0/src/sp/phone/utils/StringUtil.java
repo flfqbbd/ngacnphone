@@ -154,6 +154,8 @@ public class StringUtil {
 		//reply
 		s = s.replaceAll(
 				ignoreCaseTag +"\\[pid=\\d+\\]Reply\\[/pid\\]", "Reply");
+        s = s.replaceAll(
+                ignoreCaseTag +"\\[pid=\\d+,\\d+,\\d\\]Reply\\[/pid\\]", "Reply");
 		
 		//topic
 		s = s.replaceAll(
