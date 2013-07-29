@@ -70,7 +70,7 @@ public class BookmarkTask extends AsyncTask<String, Integer, String> {
 		if(StringUtil.isEmpty(result))
 			return;
 		
-		String msg = StringUtil.getStringBetween(result, 0, "{\"0\":\"", "\"}}").result;
+		String msg = StringUtil.getStringBetween(result, 0, "{\"0\":\"", "\"},\"time\"").result;
 		//android.R.drawable.ic_search_category_default
 		if(!StringUtil.isEmpty(msg)){
 			Toast.makeText(context, msg.trim(), Toast.LENGTH_SHORT).show();
