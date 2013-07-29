@@ -469,8 +469,8 @@ public class StringUtil {
 		return ret;
 	}
 	final static String tips = 
-			"不要用wap\n"
-			+ "app崩溃后点report/报告按钮";
+			"请在酷安或者google play更新\n"
+			+ "发现bug后请先更新到最新版本，如果还有问题请在发帖的时候指明有问题的帖子标题或者链接";
 	public static String getTips(){
 		
 		return tips;
