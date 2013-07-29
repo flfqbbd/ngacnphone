@@ -345,7 +345,7 @@ public class ArticleListFragment extends Fragment
                 postPrefix.append(postTime);
                 postPrefix.append("):[/b]\n");
                 postPrefix.append(content);
-                postPrefix.append("[/quote]");
+                postPrefix.append("[/quote]\n");
 
 			}
 
